@@ -21,7 +21,7 @@ npm install stream-multipart-upload
 
 ```js
 const server = http.createServer((req, res) => {
-    const multipart = req.pipe(new MultipartParser({ headers: req.headers }));
+    const multipart = req.pipe(new Multipart({ headers: req.headers }));
     const zip = new Zip();
     const uploadsDir = '/var/www/uploads';
 
@@ -40,8 +40,8 @@ const server = http.createServer((req, res) => {
     multipart.pipe(new Property('metadata')).pipe(zip);
     multipart.pipe(new FileSize()).pipe(zip);
     multipart.pipe(new FileHash({ encoding: 'bs58' })).pipe(zip);
-    multipart.pipe(new Exiftool()).pipe(zip);
     multipart.pipe(new StorageTempLocal()).pipe(zip);
+    multipart.pipe(new Exiftool()).pipe(zip);
 
     zip
         .pipe(new Merge())

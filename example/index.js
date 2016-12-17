@@ -8,7 +8,7 @@ const {
     FileSize,
     MultipartError,
     StorageTempLocal,
-    MultipartParser,
+    Multipart,
     Property,
     Zip,
     Merge,
@@ -18,7 +18,7 @@ const {
 // replace with require('stream-multipart-upload')
 
 const server = http.createServer((req, res) => {
-    const multipart = req.pipe(new MultipartParser({ headers: req.headers }));
+    const multipart = req.pipe(new Multipart({ headers: req.headers }));
     const zip = new Zip();
     const uploadsDir = '/var/www/uploads';
 
@@ -72,12 +72,14 @@ server.listen(0);
 
 /*
 Example output:
+
 [
     {
         fieldname: 'file',
         filename: 'img_1771.jpg',
         encoding: 'binary',
         mimetype: 'image/jpeg',
+        charset: 'binary',
         size: 32764,
         sha1: '2nzCcEDVvAHT9PBgeVMu2UJJgeGF',
         create: '2003.12.14 12:01:44',
@@ -94,14 +96,15 @@ Example output:
             flashMode: 24,
             flashFired: false
         },
-        storageLocalFilename: 'f2507890-c30d-11e6-b23f-e520b774e177.jpg',
-        storageLocalFilepath: '/var/www/uploads/f2507890-c30d-11e6-b23f-e520b774e177.jpg'
+        storageLocalFilename: '83049480-c3f8-11e6-8db4-ebf3271e57e7.jpg',
+        storageLocalFilepath: '/var/www/uploads/83049480-c3f8-11e6-8db4-ebf3271e57e7.jpg'
     },
     {
         fieldname: 'file',
         filename: 'withIptcExifGps.jpg',
         encoding: 'binary',
         mimetype: 'image/jpeg',
+        charset: 'binary',
         size: 44606,
         sha1: '42GT1NsqAggW2mzxTCRbKyzkMDwn',
         create: '2002.07.13 15:58:28',
@@ -112,13 +115,13 @@ Example output:
         gps: { latitude: 54.9896666666667, longitude: 1.91416666666667 },
         camera: {
             model: 'FUJIFILM FinePixS1Pro',
-            aperture: 'f/0.640234375',
+            aperture: 'f/0.64',
             datetime: '2002.07.13 15:58:28',
             flashMode: 0,
             flashFired: false
         },
-        storageLocalFilename: 'f2570840-c30d-11e6-b23f-e520b774e177.jpg',
-        storageLocalFilepath: '/var/www/uploads/f2570840-c30d-11e6-b23f-e520b774e177.jpg'
+        storageLocalFilename: '830b7250-c3f8-11e6-8db4-ebf3271e57e7.jpg',
+        storageLocalFilepath: '/var/www/uploads/830b7250-c3f8-11e6-8db4-ebf3271e57e7.jpg'
     }
 ]
 */
