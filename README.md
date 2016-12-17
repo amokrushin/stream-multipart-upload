@@ -82,7 +82,7 @@ new Property(`property`)
 Converts chunks to JSON
 
 
-## Pre-processor
+## Pre-processor transform streams
 
 Each pre-processor is a transform object stream.
 
@@ -279,7 +279,7 @@ If input chunk metadata has error field then temporary file will be removed othe
 ```
 
 
-## Post-processor
+## Post-processor transform streams
 
 ### StorageLocal(`options`)
 
