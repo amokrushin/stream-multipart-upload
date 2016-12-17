@@ -53,22 +53,54 @@ const server = http.createServer((req, res) => {
 
 ## API
 
+<!-- toc -->
 
-## General purpose transform streams
+- [General purpose transform streams](#general-purpose-transform-streams)
+  * [Multipart](#multipart)
+  * [Zip](#zip)
+  * [Merge](#merge)
+  * [Property](#property)
+  * [JsonStream](#jsonstream)
+- [Pre-processor transform streams](#pre-processor-transform-streams)
+  * [MultipartError](#multiparterror)
+    + [Input chunk format](#input-chunk-format)
+    + [Output chunk format](#output-chunk-format)
+  * [FileSize](#filesize)
+    + [Input chunk](#input-chunk)
+    + [Output chunk format](#output-chunk-format-1)
+  * [FileHash](#filehash)
+    + [Input chunk](#input-chunk-1)
+    + [Output chunk format](#output-chunk-format-2)
+  * [Exiftool](#exiftool)
+    + [Input chunk](#input-chunk-2)
+    + [Output chunk format](#output-chunk-format-3)
+    + [Output chunk example](#output-chunk-example)
+    + [Exiftool.end](#exiftoolend)
+  * [StorageTempLocal](#storagetemplocal)
+    + [Input chunk](#input-chunk-3)
+    + [Output chunk format](#output-chunk-format-4)
+- [Post-processor transform streams](#post-processor-transform-streams)
+  * [StorageLocal](#storagelocal)
+    + [Input chunk](#input-chunk-4)
+    + [Output chunk format](#output-chunk-format-5)
 
-### Multipart(`options`)
-See: [stream-multipart](https://github.com/amokrushin/stream-multipart)
+<!-- tocstop -->
 
-### Zip(`options`)
-See: [stream-zip](https://github.com/amokrushin/stream-zip)
+### General purpose transform streams
 
-### Merge()
+#### Multipart
+`new Multipart(options)` See: [stream-multipart](https://github.com/amokrushin/stream-multipart)
 
-Merges array of objects to a single object for each chunk
+#### Zip
+`new Zip(options)` See: [stream-zip](https://github.com/amokrushin/stream-zip)
 
-### Property(`path`)
+#### Merge
 
-Outputs a property of input chunk. Lodash [get](https://lodash.com/docs/4.17.2#get) method used to resolved the value.
+`new Merge()` Merges array of objects to a single object for each chunk
+
+#### Property
+
+`new Property(path)` Outputs a property of input chunk. Lodash [get](https://lodash.com/docs/4.17.2#get) method used to resolved the value.
 
 Example:
 ```
@@ -77,12 +109,12 @@ new Property(`property`)
 {property: {child: 123}} -> {child: 123}
 ```
 
-### JsonStream()
+#### JsonStream
 
-Converts chunks to JSON
+`new JsonStream()` Converts chunks to JSON
 
 
-## Pre-processor transform streams
+### Pre-processor transform streams
 
 Each pre-processor is a transform object stream.
 
@@ -99,9 +131,11 @@ Input chunk
 }
 ```
 
-### MultipartError(`options`)
+#### MultipartError
 
-Handles file stream error
+`new MultipartError()` Handles file stream error
+
+##### Input chunk format
 
 ```
 {
@@ -109,7 +143,7 @@ Handles file stream error
 }
 ```
 
-#### Output chunk format
+##### Output chunk format
 
 ```
 {
@@ -117,11 +151,11 @@ Handles file stream error
 }
 ```
 
-### FileSize()
+#### FileSize
 
-Calculates file stream size
+`new FileSize()` Calculates file stream size
 
-#### Input chunk required fields
+##### Input chunk
 
 ```
 {
@@ -129,7 +163,7 @@ Calculates file stream size
 }
 ```
 
-#### Output chunk format
+##### Output chunk format
 
 ```
 {
@@ -137,16 +171,16 @@ Calculates file stream size
 }
 ```
 
-### FileHash(`options`)
+#### FileHash
 
-Calculates file stream hash
+`new FileHash(options)` Calculates file stream hash
 
 * `options` - (Object) Optional uuid state to apply. Properties may include:
 
   * `algorithm` - (String) Default: `sha1`.
   * `encoding` - (Boolean) hex or [bs58](https://github.com/cryptocoinjs/bs58). Default: `hex`.
 
-#### Input chunk required fields
+##### Input chunk
 
 ```
 {
@@ -154,7 +188,7 @@ Calculates file stream hash
 }
 ```
 
-#### Output chunk format
+##### Output chunk format
 
 ```
 {
@@ -162,9 +196,9 @@ Calculates file stream hash
 }
 ```
 
-### Exiftool(`options`)
+#### Exiftool
 
-Extract file metadata using [exiftool](http://www.sno.phy.queensu.ca/~phil/exiftool/) and node.js [exiftool-vendored](https://github.com/mceachen/exiftool-vendored) wrapper.
+`new Exiftool(options)` Extract file metadata using [exiftool](http://www.sno.phy.queensu.ca/~phil/exiftool/) and node.js [exiftool-vendored](https://github.com/mceachen/exiftool-vendored) wrapper.
 
 Exiftool works in [-stay_open](http://www.sno.phy.queensu.ca/~phil/exiftool/#performance) mode.
 That mode do not support streaming and requires files.
@@ -177,7 +211,7 @@ It is a reason that module creates temporary file for each incoming chunk and re
   * `readLimit` - (Number) The EXIF data located at the beginning of the file, so there is no reason to read the file completely. `readLimit` is a limit following which the reading will be aborted and temporary file will be passed to exiftool. Default: 524288 (512Kb).
   * `ExiftoolTask` - (Function) Override default exiftool task. Should inherit [Task](https://github.com/mceachen/exiftool-vendored/blob/master/src/task.ts) Default: [ExiftoolTask](lib/util/ExiftoolTask.js).
 
-#### Input chunk required fields
+##### Input chunk
 
 ```
 {
@@ -185,7 +219,9 @@ It is a reason that module creates temporary file for each incoming chunk and re
 }
 ```
 
-#### Output chunk format (all fields are optional)
+##### Output chunk format
+
+Note: all fields are optional
 
 ```
 {
@@ -216,7 +252,7 @@ It is a reason that module creates temporary file for each incoming chunk and re
 }
 ```
 
-#### Output chunk example
+##### Output chunk example
 ```
 {
     "filename": "1px-asus-zenfone-5.jpg",
@@ -246,14 +282,14 @@ It is a reason that module creates temporary file for each incoming chunk and re
 }
 ```
 
-#### Exiftool.end()
+##### Exiftool.end
 
 Static method. Shuts down exiftool child process.
 
 
-### StorageTempLocal(`options`)
+#### StorageTempLocal
 
-Save temporary files to disk.
+`new StorageTempLocal(options)` Save temporary files to disk.
 
 If input chunk metadata has error field then temporary file will be removed otherwise it will be moved to `options.dir` and renamed with `options.filenameProperty` or `options.filenameFn` method.
 
@@ -262,7 +298,7 @@ If input chunk metadata has error field then temporary file will be removed othe
   * `tmpDir` - (String) Uploads dir. Default: `os.tmpdir()`.
   * `ensureDir` - (Boolean) Ensure that dir exists, create if not. Default: true.
 
-#### Input chunk required fields
+##### Input chunk
 
 ```
 {
@@ -270,7 +306,7 @@ If input chunk metadata has error field then temporary file will be removed othe
 }
 ```
 
-#### Output chunk format
+##### Output chunk format
 
 ```
 {
@@ -279,11 +315,11 @@ If input chunk metadata has error field then temporary file will be removed othe
 ```
 
 
-## Post-processor transform streams
+### Post-processor transform streams
 
-### StorageLocal(`options`)
+#### StorageLocal
 
-Move temporary files to target dir.
+`new StorageLocal(options)` Move temporary files to target dir.
 
 If input chunk metadata has error field then temporary file will be removed otherwise it will be moved to `options.dir` and renamed with `options.filenameProperty` or `options.filenameFn` method.
 
@@ -294,7 +330,7 @@ If input chunk metadata has error field then temporary file will be removed othe
   * `filenameProperty` - (String) Take target filename from metadata property `metadata[filenameProperty]`. Default: `null`.
   * `filenameFn` - (Function) Function for selecting target filename. `metadata` object passed as first argument. Example function: `(metadata) => metadata.id`. Default: `null`.
 
-#### Input chunk required fields
+##### Input chunk
 
 ```
 {
@@ -305,7 +341,7 @@ If input chunk metadata has error field then temporary file will be removed othe
 }
 ```
 
-#### Output chunk format
+##### Output chunk format
 
 ```
 {
