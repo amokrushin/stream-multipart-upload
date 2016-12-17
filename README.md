@@ -178,7 +178,7 @@ Input chunk
 * `options` - (Object) Optional uuid state to apply. Properties may include:
 
   * `algorithm` - (String) Default: `sha1`.
-  * `encoding` - (Boolean) hex or [bs58](https://github.com/cryptocoinjs/bs58). Default: `hex`.
+  * `encoding` - (String) hex or [bs58](https://github.com/cryptocoinjs/bs58). Default: `hex`.
 
 ##### Input chunk
 
