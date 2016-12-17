@@ -292,5 +292,27 @@
       "longitude": 112.107,
       "timestamp": 1313115377
     }
+  },
+  {
+    "filename": "withIptcExifGps.jpg",
+    "size": 44606,
+    "sha1": "42GT1NsqAggW2mzxTCRbKyzkMDwn",
+    "create": "2002.07.13 15:58:28",
+    "modify": "2002.07.19 13:28:10",
+    "mimetype": "image/jpeg",
+    "width": 600,
+    "height": 400,
+    "orientation": 1,
+    "camera": {
+      "aperture": "f/0.64",
+      "datetime": "2002.07.13 15:58:28",
+      "flashFired": false,
+      "flashMode": 0,
+      "model": "FUJIFILM FinePixS1Pro"
+    },
+    "gps": {
+      "latitude": 54.9896666666667,
+      "longitude": 1.91416666666667
+    }
   }
 ]
