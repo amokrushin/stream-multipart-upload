@@ -100,7 +100,7 @@ const server = http.createServer((req, res) => {
 
 #### Property
 
-`new Property(path)` Outputs a property of input chunk. Lodash [get](https://lodash.com/docs/4.17.2#get) method used to resolved the value.
+`new Property(path)` Outputs a property of input chunk. Lodash [get](https://lodash.com/docs/4.17.2#get) method used to resolve the value.
 
 Example:
 ```
@@ -349,6 +349,24 @@ If input chunk metadata has error field then temporary file will be removed othe
     storageLocalFilepath: String,
     [error: Error|Array<Error>]
 }
+```
+
+## Performance
+
+### Hardware
+```
+KVM, 1 vCPU Intel Xeon E5-2670v2, 2GB RAM, SSD
+```
+
+### Local server, local client, 30 DSLR photos from Canon 650d with average size of 10Mb each
+```
+  Task: upload 30 files in 15 multipart/form-data requests with concurrency 10
+
+✔ Done!
+
+  30 files uploaded in 3.999s
+  Size: 314.42 Mb
+  Speed: 628.99 Mbit/s, 7.50 files per second
 ```
 
 
