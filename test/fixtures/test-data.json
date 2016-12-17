@@ -1,0 +1,296 @@
+[
+  {
+    "filename": "1px-canon-650d.jpg",
+    "size": 29703,
+    "sha1": "LtHyYfhHCUzx8FmvDvHnrMBG7as",
+    "create": "2015.03.17 19:01:05",
+    "modify": "2015.03.17 19:01:05",
+    "mimetype": "image/jpeg",
+    "width": 1,
+    "height": 1,
+    "orientation": 8,
+    "camera": {
+      "model": "Canon EOS 650D",
+      "aperture": "f/3.5",
+      "exposureTime": "1/8s",
+      "focalLength": "18mm",
+      "iso": "ISO3200",
+      "datetime": "2015.03.17 19:01:05",
+      "lensModel": "EF-S18-55mm f/3.5-5.6 IS II",
+      "flashMode": 16,
+      "flashFired": false
+    }
+  },
+  {
+    "filename": "1px-htc-one-v.jpg",
+    "size": 62314,
+    "sha1": "kTSpJADZyqVBqJNvDTc5fUjn5iz",
+    "create": "2012.05.20 16:15:50",
+    "mimetype": "image/jpeg",
+    "width": 1,
+    "height": 1,
+    "gps": {
+      "latitude": 55.7430113888889,
+      "longitude": 37.6069916666667,
+      "timestamp": 1337516150
+    },
+    "camera": {
+      "model": "HTC One V",
+      "focalLength": "3.03mm",
+      "iso": "ISO76",
+      "datetime": "2012.05.20 16:15:50"
+    }
+  },
+  {
+    "filename": "1px-asus-zenfone-5.jpg",
+    "size": 33586,
+    "sha1": "4VPX6DbQoDHoRUx757JSsoTUbrH5",
+    "create": "2015.08.01 19:10:25",
+    "modify": "2015.08.01 19:10:25",
+    "mimetype": "image/jpeg",
+    "width": 1,
+    "height": 1,
+    "orientation": 6,
+    "gps": {
+      "latitude": 56.1235333333333,
+      "longitude": 38.6031527777778,
+      "timestamp": 1438445417
+    },
+    "camera": {
+      "model": "ASUS T00J",
+      "aperture": "f/2",
+      "exposureTime": "1/20s",
+      "focalLength": "2.69mm",
+      "iso": "ISO360",
+      "datetime": "2015.08.01 19:10:25",
+      "flashMode": 0,
+      "flashFired": false
+    }
+  },
+  {
+    "filename": "1px-canon-650d-2.jpg",
+    "size": 26894,
+    "sha1": "2jsvTVaAdkgo2ELPaLRyHEeRxwx2",
+    "create": "2014.11.30 19:58:10",
+    "modify": "2014.11.30 19:58:10",
+    "mimetype": "image/jpeg",
+    "width": 1,
+    "height": 1,
+    "orientation": 1,
+    "camera": {
+      "model": "Canon EOS 650D",
+      "aperture": "f/3.5",
+      "exposureTime": "1/60s",
+      "focalLength": "18mm",
+      "iso": "ISO1000",
+      "datetime": "2014.11.30 19:58:10",
+      "lensModel": "EF-S18-55mm f/3.5-5.6 IS II",
+      "flashMode": 9,
+      "flashFired": true
+    }
+  },
+  {
+    "filename": "1px-canon-ixus-75.jpg",
+    "size": 11549,
+    "sha1": "4MSUk3cPptJwTaiNTyr51kc7fcYw",
+    "create": "2011.04.23 12:31:20",
+    "modify": "2011.04.23 12:31:20",
+    "mimetype": "image/jpeg",
+    "width": 1,
+    "height": 1,
+    "orientation": 1,
+    "camera": {
+      "model": "Canon DIGITAL IXUS 75",
+      "aperture": "f/8",
+      "exposureTime": "1/160s",
+      "focalLength": "5.8mm",
+      "iso": "ISO80",
+      "datetime": "2011.04.23 12:31:20",
+      "flashMode": 24,
+      "flashFired": false
+    }
+  },
+  {
+    "filename": "1px-kodak-dc210.jpg",
+    "size": 22025,
+    "sha1": "2QbTgHSBfixDAq17UeAwFyxm6ntz",
+    "mimetype": "image/jpeg",
+    "width": 1,
+    "height": 1,
+    "orientation": 1,
+    "camera": {
+      "model": "Eastman Kodak Company DC210 Zoom (V05.00)",
+      "aperture": "f/4",
+      "exposureTime": "1/30s",
+      "focalLength": "4.4mm",
+      "datetime": "2000.10.26 16:46:51",
+      "flashMode": 1,
+      "flashFired": true
+    }
+  },
+  {
+    "filename": "1px-sony-d700.jpg",
+    "size": 15345,
+    "sha1": "4T6GuEoJZM2mPdCN8pzQGMCZMKH6",
+    "create": "1998.12.01 14:22:36",
+    "modify": "1998.12.01 14:22:36",
+    "mimetype": "image/jpeg",
+    "width": 1,
+    "height": 1,
+    "orientation": 1,
+    "camera": {
+      "model": "SONY DSC-D700",
+      "iso": "ISO200",
+      "datetime": "1998.12.01 14:22:36",
+      "flashMode": 0,
+      "flashFired": false
+    }
+  },
+  {
+    "filename": "1px-sony-dsc-p150.jpg",
+    "size": 16426,
+    "sha1": "3N6oemRhr1XrUrSApkfYJgtjB7iy",
+    "create": "2012.04.04 13:52:12",
+    "modify": "2012.04.10 09:53:08",
+    "mimetype": "image/jpeg",
+    "width": 1,
+    "height": 1,
+    "orientation": 1,
+    "camera": {
+      "model": "SONY DSC-P150",
+      "aperture": "f/2.8",
+      "exposureTime": "1/40s",
+      "focalLength": "7.9mm",
+      "iso": "ISO100",
+      "datetime": "2012.04.04 13:52:12",
+      "flashMode": 13,
+      "flashFired": true
+    }
+  },
+  {
+    "filename": "1px-iphone-4.jpg",
+    "size": 4908,
+    "sha1": "8McWTsonUP3rafiUNpJogYtn8db",
+    "create": "2011.09.04 12:51:11",
+    "modify": "2011.09.04 12:51:11",
+    "mimetype": "image/jpeg",
+    "width": 1,
+    "height": 1,
+    "orientation": 1,
+    "gps": {
+      "latitude": 38.9098333333333,
+      "longitude": 1.43866666666667,
+      "timestamp": 1315134467
+    },
+    "camera": {
+      "model": "Apple iPhone 4",
+      "aperture": "f/2.8",
+      "exposureTime": "1/3016s",
+      "focalLength": "3.85mm",
+      "iso": "ISO80",
+      "datetime": "2011.09.04 12:51:11",
+      "flashMode": 0,
+      "flashFired": false
+    }
+  },
+  {
+    "filename": "dummy-3000x2000-1.jpg",
+    "mimetype": "image/jpeg",
+    "width": 3000,
+    "height": 2000
+  },
+  {
+    "filename": "blank.pdf",
+    "size": 1866,
+    "sha1": "2AAiEcFSDxXRbCCJvhKyzY3Nm8K3",
+    "mimetype": "application/pdf",
+    "create": "2016.11.15 18:04:40",
+    "modify": "2016.11.15 18:04:40"
+  },
+  {
+    "filename": "test.gpx",
+    "size": 29650,
+    "sha1": "26ibFGXVSqq6J7kNBF7iWKTziGJy",
+    "mimetype": "application/xml"
+  },
+  {
+    "filename": "test.kml",
+    "size": 19299,
+    "sha1": "4VcMw3zKVegXA5mmi1kW3ZDQDB9B",
+    "mimetype": "application/xml"
+  },
+  {
+    "filename": "test.svg",
+    "size": 3445,
+    "sha1": "2me4tVtt3d4STqs813BhKwk4Bp8e",
+    "mimetype": "image/svg+xml",
+    "width": 744.09448819,
+    "height": 1052.3622047
+  },
+  {
+    "filename": "empty.txt",
+    "size": 0,
+    "sha1": "43LNwPunkRCSovrjPyoxpukWVtnU",
+    "mimetype": "text/plain"
+  },
+  {
+    "filename": "jpeg-format-error.jpg",
+    "mimetype": "image/jpeg",
+    "size": 65536,
+    "sha1": "2wS4yY3RzB1fernF1mXpM1RfZQWb",
+    "error": "JPEG format error"
+  },
+  {
+    "filename": "8px-htc-desire.jpg",
+    "size": 328762,
+    "sha1": "3Qji67U4Dx9HXkrgngp4dviEvVse",
+    "create": "2010.06.06 13:07:51",
+    "mimetype": "image/jpeg",
+    "width": 8,
+    "height": 8,
+    "camera": {
+      "datetime": "2010.06.06 13:07:51",
+      "iso": "ISO100",
+      "model": "HTC Desire"
+    }
+  },
+  {
+    "filename": "8px-motorola-moto-g.jpg",
+    "size": 1029791,
+    "sha1": "2VPajsTX3HmB33xqFAzEbDqwcj2B",
+    "create": "2016.07.31 15:06:55",
+    "modify": "2016.07.31 15:06:55",
+    "mimetype": "image/jpeg",
+    "camera": {
+      "aperture": "f/2",
+      "datetime": "2016.07.31 15:06:55",
+      "exposureTime": "1/450s",
+      "flashFired": false,
+      "flashMode": 24,
+      "focalLength": "4.68mm",
+      "iso": "ISO64",
+      "model": "Motorola Moto G (4)"
+    },
+    "error": "JPEG format error"
+  },
+  {
+    "filename": "8px-htc-mytouch-4g.jpg",
+    "size": 339836,
+    "sha1": "22oG78UB5bwFuTi3NgtLd3QkT1LU",
+    "create": "2011.08.11 19:16:17",
+    "mimetype": "image/jpeg",
+    "width": 8,
+    "height": 8,
+    "camera": {
+      "datetime": "2011.08.11 19:16:17",
+      "focalLength": "3.53mm",
+      "iso": "ISO95",
+      "model": "HTC myTouch 4G"
+    },
+    "gps": {
+      "latitude": 36.0604638888889,
+      "longitude": 112.107,
+      "timestamp": 1313115377
+    }
+  }
+]

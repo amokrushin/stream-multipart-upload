@@ -1,0 +1,972 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1" creator="OruxMaps v.6.0.10" version="1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata>
+<name><![CDATA[Waypoints]]></name>
+<desc><![CDATA[]]></desc>
+<link href="http://www.oruxmaps.com">
+<text>OruxMaps</text>
+</link>
+<time>2016-05-18T17:45:16Z</time></metadata>
+<wpt lat="56.1302129" lon="37.8855449">
+<ele>200.74</ele>
+<time>2016-05-18T11:30:56Z</time>
+<name><![CDATA[povorot-cernskoe]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.1261197" lon="37.8734759">
+<ele>201.16</ele>
+<time>2016-05-18T11:28:17Z</time>
+<name><![CDATA[povorot2-cernskoe]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.1456922" lon="37.8540513">
+<ele>187.62</ele>
+<time>2016-05-17T11:32:09Z</time>
+<name><![CDATA[lager-orgi]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.1452867" lon="37.8535552">
+<ele>184.44</ele>
+<time>2016-05-17T11:24:51Z</time>
+<name><![CDATA[k109-8]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.1446842" lon="37.8523635">
+<ele>192.28</ele>
+<time>2016-05-17T11:13:25Z</time>
+<name><![CDATA[k108-3]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.1456298" lon="37.8533451">
+<ele>185.26</ele>
+<time>2016-05-17T11:04:28Z</time>
+<name><![CDATA[k107-9]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.1456646" lon="37.8531264">
+<ele>189.70</ele>
+<time>2016-05-17T10:54:41Z</time>
+<name><![CDATA[k106-9]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.1468194" lon="37.8539984">
+<ele>184.01</ele>
+<time>2016-05-17T10:43:53Z</time>
+<name><![CDATA[k105-6]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.1465742" lon="37.8536676">
+<ele>198.87</ele>
+<time>2016-05-17T10:36:30Z</time>
+<name><![CDATA[k104-9]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.1464698" lon="37.8532861">
+<ele>198.69</ele>
+<time>2016-05-17T10:26:52Z</time>
+<name><![CDATA[k103-7]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.1461780" lon="37.8537440">
+<ele>207.66</ele>
+<time>2016-05-17T10:17:06Z</time>
+<name><![CDATA[k102-9]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.1456100" lon="37.8535378">
+<ele>194.15</ele>
+<time>2016-05-17T10:05:20Z</time>
+<name><![CDATA[k101-7]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.1264881" lon="37.8246611">
+<ele>177.63</ele>
+<time>2016-05-15T14:14:12Z</time>
+<name><![CDATA[k100-7]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.1267963" lon="37.8251348">
+<ele>176.67</ele>
+<time>2016-05-15T14:05:00Z</time>
+<name><![CDATA[k99-9]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.1262208" lon="37.8253387">
+<ele>179.63</ele>
+<time>2016-05-15T13:55:37Z</time>
+<name><![CDATA[k98-9]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.1248638" lon="37.8251833">
+<ele>175.26</ele>
+<time>2016-05-15T13:42:01Z</time>
+<name><![CDATA[k97-6]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.1273961" lon="37.8169277">
+<ele>196.63</ele>
+<time>2016-05-15T13:15:50Z</time>
+<name><![CDATA[k96-4]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.1313019" lon="37.8169445">
+<ele>182.50</ele>
+<time>2016-05-15T13:01:37Z</time>
+<name><![CDATA[k95-8]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.1324152" lon="37.8177846">
+<ele>203.95</ele>
+<time>2016-05-15T12:55:14Z</time>
+<name><![CDATA[k94-3]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.1339478" lon="37.8251415">
+<ele>206.62</ele>
+<time>2016-05-15T12:35:38Z</time>
+<name><![CDATA[k93-7]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.1343082" lon="37.8296649">
+<ele>198.62</ele>
+<time>2016-05-15T12:21:41Z</time>
+<name><![CDATA[k92-4]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.1391750" lon="37.8295731">
+<ele>216.63</ele>
+<time>2016-05-15T12:08:31Z</time>
+<name><![CDATA[k91-2]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.1361215" lon="37.8367769">
+<ele>220.00</ele>
+<time>2016-05-15T11:43:33Z</time>
+<name><![CDATA[k90-6]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.1348600" lon="37.8370584">
+<ele>220.38</ele>
+<time>2016-05-15T11:29:23Z</time>
+<name><![CDATA[k89-7]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.1348567" lon="37.8370684">
+<ele>218.88</ele>
+<time>2016-05-15T11:21:31Z</time>
+<name><![CDATA[k88-9]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.1348085" lon="37.8369022">
+<ele>181.42</ele>
+<time>2016-05-15T11:13:39Z</time>
+<name><![CDATA[k87-9]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.1346410" lon="37.8373518">
+<ele>197.62</ele>
+<time>2016-05-15T11:00:41Z</time>
+<name><![CDATA[k86-7]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.1339643" lon="37.8363957">
+<ele>195.38</ele>
+<time>2016-05-15T10:46:08Z</time>
+<name><![CDATA[k85-4]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.1283186" lon="37.8398050">
+<ele>180.36</ele>
+<time>2016-05-14T14:42:30Z</time>
+<name><![CDATA[k67-7]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.1277571" lon="37.8419358">
+<ele>188.49</ele>
+<time>2016-05-14T14:20:08Z</time>
+<name><![CDATA[k66-5]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.1286022" lon="37.8418347">
+<ele>206.25</ele>
+<time>2016-05-14T14:09:56Z</time>
+<name><![CDATA[k65-6]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.1291967" lon="37.8418463">
+<ele>179.00</ele>
+<time>2016-05-14T13:54:39Z</time>
+<name><![CDATA[k64-4]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.1289547" lon="37.8436413">
+<ele>209.63</ele>
+<time>2016-05-14T13:44:00Z</time>
+<name><![CDATA[k63-5]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.1291496" lon="37.8425775">
+<ele>191.60</ele>
+<time>2016-05-14T13:35:20Z</time>
+<name><![CDATA[k62-7]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.1294118" lon="37.8424397">
+<ele>201.63</ele>
+<time>2016-05-14T13:28:29Z</time>
+<name><![CDATA[k61-5]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.1294245" lon="37.8418980">
+<ele>188.66</ele>
+<time>2016-05-14T13:15:40Z</time>
+<name><![CDATA[k60-9]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.1102238" lon="37.8206091">
+<ele>197.64</ele>
+<time>2016-05-09T15:14:01Z</time>
+<name><![CDATA[k-vhod-lep]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.1267946" lon="37.8525816">
+<ele>210.79</ele>
+<time>2016-05-09T14:07:51Z</time>
+<name><![CDATA[k-povorot]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.1156221" lon="37.8526758">
+<ele>203.63</ele>
+<time>2016-05-09T13:43:46Z</time>
+<name><![CDATA[k- povorot]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.1143433" lon="37.8314389">
+<ele>192.78</ele>
+<time>2016-05-09T12:55:12Z</time>
+<name><![CDATA[ k59-8]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.1129916" lon="37.8283831">
+<ele>197.63</ele>
+<time>2016-05-09T12:46:07Z</time>
+<name><![CDATA[k58-5]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.1122924" lon="37.8266879">
+<ele>204.67</ele>
+<time>2016-05-09T12:38:49Z</time>
+<name><![CDATA[k57-5]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.0888453" lon="37.8204744">
+<ele>136.80</ele>
+<time>2016-05-08T11:06:13Z</time>
+<name><![CDATA[k- povorot]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.1410289" lon="37.8508361">
+<ele>195.31</ele>
+<time>2016-05-01T13:05:34Z</time>
+<name><![CDATA[doroga-v-lager]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.0890864" lon="37.8196600">
+<ele>166.63</ele>
+<time>2016-05-01T12:37:05Z</time>
+<name><![CDATA[k-povorot]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.0886986" lon="37.7934220">
+<ele>203.87</ele>
+<time>2016-05-01T11:54:29Z</time>
+<name><![CDATA[k56-1]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.0924121" lon="37.7944741">
+<ele>221.00</ele>
+<time>2016-05-01T11:46:08Z</time>
+<name><![CDATA[k55-1]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.0934206" lon="37.8008756">
+<ele>193.75</ele>
+<time>2016-05-01T11:23:38Z</time>
+<name><![CDATA[k54-1]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.0944311" lon="37.8033039">
+<ele>156.05</ele>
+<time>2016-05-01T11:11:08Z</time>
+<name><![CDATA[k53-3]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.0983623" lon="37.8032271">
+<ele>186.63</ele>
+<time>2016-05-01T10:56:52Z</time>
+<name><![CDATA[k52-1]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.0984096" lon="37.8113044">
+<ele>220.20</ele>
+<time>2016-05-01T10:43:04Z</time>
+<name><![CDATA[k111-5]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.0986468" lon="37.8201446">
+<ele>207.12</ele>
+<time>2016-05-01T10:27:42Z</time>
+<name><![CDATA[k51-1]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.0888517" lon="37.8260303">
+<ele>168.62</ele>
+<time>2016-05-01T09:54:09Z</time>
+<name><![CDATA[k50-3]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.0887689" lon="37.8349344">
+<ele>168.02</ele>
+<time>2016-05-01T09:34:01Z</time>
+<name><![CDATA[vhod-molokozavod]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.0886373" lon="37.7859321">
+<ele>0.00</ele>
+<time>2016-04-30T08:58:21Z</time>
+<name><![CDATA[k21-4]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.0915005" lon="37.7835838">
+<ele>199.63</ele>
+<time>2016-04-24T15:20:45Z</time>
+<name><![CDATA[k19-6]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.0896566" lon="37.7828381">
+<ele>179.62</ele>
+<time>2016-04-24T15:11:46Z</time>
+<name><![CDATA[k18-5]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.0860125" lon="37.7774142">
+<ele>190.61</ele>
+<time>2016-04-24T14:52:31Z</time>
+<name><![CDATA[k17-1]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.0844716" lon="37.7773587">
+<ele>181.63</ele>
+<time>2016-04-24T14:47:19Z</time>
+<name><![CDATA[k16-3]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.0841246" lon="37.7798909">
+<ele>170.63</ele>
+<time>2016-04-24T14:38:26Z</time>
+<name><![CDATA[k15-3]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.0854517" lon="37.7821256">
+<ele>196.63</ele>
+<time>2016-04-24T14:26:56Z</time>
+<name><![CDATA[k14-6]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.0875218" lon="37.7825425">
+<ele>175.52</ele>
+<time>2016-04-24T14:20:05Z</time>
+<name><![CDATA[k13-6]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.0879745" lon="37.7826297">
+<ele>198.87</ele>
+<time>2016-04-24T14:15:57Z</time>
+<name><![CDATA[k12-6]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.0885348" lon="37.7828656">
+<ele>174.69</ele>
+<time>2016-04-24T14:10:22Z</time>
+<name><![CDATA[k11-5]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.0885358" lon="37.7800873">
+<ele>187.84</ele>
+<time>2016-04-24T13:59:02Z</time>
+<name><![CDATA[k10-3]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.0908658" lon="37.7772701">
+<ele>170.80</ele>
+<time>2016-04-24T13:40:04Z</time>
+<name><![CDATA[k09-5]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.0911661" lon="37.7768088">
+<ele>167.56</ele>
+<time>2016-04-24T13:34:17Z</time>
+<name><![CDATA[k08-8]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.0913400" lon="37.7773713">
+<ele>189.64</ele>
+<time>2016-04-24T13:26:16Z</time>
+<name><![CDATA[k07-6]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.0926802" lon="37.7742682">
+<ele>175.29</ele>
+<time>2016-04-24T13:15:07Z</time>
+<name><![CDATA[k06-2]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.0923157" lon="37.7762277">
+<ele>185.73</ele>
+<time>2016-04-24T13:09:52Z</time>
+<name><![CDATA[k05-3]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.0941298" lon="37.7771630">
+<ele>179.82</ele>
+<time>2016-04-24T12:57:26Z</time>
+<name><![CDATA[k04-4]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.0940320" lon="37.7772350">
+<ele>177.88</ele>
+<time>2016-04-24T12:52:24Z</time>
+<name><![CDATA[k03-4]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.0957720" lon="37.7763193">
+<ele>179.27</ele>
+<time>2016-04-24T12:41:07Z</time>
+<name><![CDATA[k02-5]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+<wpt lat="56.0958500" lon="37.7772639">
+<ele>177.63</ele>
+<time>2016-04-24T12:37:50Z</time>
+<name><![CDATA[k001-3]]></name>
+<desc><![CDATA[]]></desc>
+<sym>Waypoint</sym>
+<type>Путевая точка</type>
+<extensions>
+<om:oruxmapsextensions xmlns:om="http://www.oruxmaps.com/oruxmapsextensions/1/0">
+<om:ext type="ICON" subtype="0">1</om:ext>
+</om:oruxmapsextensions>
+</extensions>
+</wpt>
+</gpx>

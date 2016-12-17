@@ -1,0 +1,24 @@
+{
+  "extends": "airbnb",
+  "rules": {
+    "indent": ["error", 4, {"SwitchCase": 1}],
+    "max-len": ["error", 120],
+    "import/no-unresolved": "off",
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
+    "no-underscore-dangle": ["off"],
+    "no-plusplus": ["off"],
+    "class-methods-use-this": ["off"],
+    "comma-dangle": [
+      "error", {
+        "arrays": "always-multiline",
+        "objects": "always-multiline",
+        "imports": "always-multiline",
+        "exports": "always-multiline",
+        "functions": "ignore"
+      }
+    ]
+  },
+  "env": {
+    "node": true
+  }
+}
