@@ -1,22 +1,24 @@
 {
   "extends": "airbnb",
   "rules": {
-    "indent": ["error", 4, {"SwitchCase": 1}],
-    "max-len": ["error", 120],
-    "import/no-unresolved": "off",
-    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
-    "no-underscore-dangle": ["off"],
-    "no-plusplus": ["off"],
-    "class-methods-use-this": ["off"],
     "comma-dangle": [
-      "error", {
+      "error",
+      {
         "arrays": "always-multiline",
         "objects": "always-multiline",
         "imports": "always-multiline",
         "exports": "always-multiline",
         "functions": "ignore"
       }
-    ]
+    ],
+    "consistent-return": ["off"],
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
+    "import/no-unresolved": "off",
+    "indent": ["error", 4, {"SwitchCase": 1}],
+    "max-len": ["error", 120],
+    "no-plusplus": ["off"],
+    "no-underscore-dangle": ["off"],
+    "no-unused-expressions": ["error", {"allowShortCircuit": true}]
   },
   "env": {
     "node": true
