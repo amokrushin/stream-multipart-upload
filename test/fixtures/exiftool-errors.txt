@@ -1,0 +1,178 @@
+CanonXL_H1.jpg IFD1 pointer references previous InteropIFD directory
+JenoptikJD41Z8.jpg Invalid EXIF text encoding for UserComment
+CreativeDiViCam316.jpg Invalid EXIF text encoding for UserComment
+DigilifeDDC-580.jpg Invalid EXIF text encoding for UserComment
+DigilifeDDC-680.jpg Invalid EXIF text encoding for UserComment
+DigilifeDDC-690.jpg Invalid EXIF text encoding for UserComment
+DoCoMoD900i.jpg Invalid EXIF text encoding for UserComment
+DoCoMoM702iG.jpg Invalid EXIF text encoding for UserComment
+DoCoMoSH03A.jpg Invalid EXIF text encoding for UserComment
+DoCoMoSH902i.jpg Invalid EXIF text encoding for UserComment
+EpsonCP-850Z.jpg Bad InteropIFD directory
+EpsonPhotoPC2100Z.jpg Bad InteropIFD directory
+FLIR_AX5.jpg GPS pointer references previous ExifIFD directory
+FLIR_B335.jpg JPEG format error
+FLIR_Bertha3.jpg JPEG format error
+FLIR_P60PAL.jpg Bad GPS offset for GPSLatitude
+FLIR_P640.jpg JPEG format error
+FLIR_P660.jpg JPEG format error
+FLIR_T620.jpg JPEG format error
+FLIR_T620bx.jpg JPEG format error
+FLIR_T640.jpg JPEG format error
+FLIR_ThermaCAM_P640.jpg JPEG format error
+FLIR_ThermaCAM_P660West.jpg JPEG format error
+FLIR_ThermaCAM_SC640.jpg JPEG format error
+FLIR_ThermaCAM_SC660Wes.jpg JPEG format error
+FLIR_ThermaCAM_T-400.jpg Bad GPS offset for GPSLatitude
+FLIR_ThermaCamP660Wes.jpg JPEG format error
+FLIR_ThermaCamSC660WES.jpg JPEG format error
+FujiFilmFinePixJ10.jpg Bad PrintIM size
+FujiFilmFinePixS5Pro.jpg JPEG format error
+GeniusG-ShotG512.jpg Invalid EXIF text encoding for UserComment
+GeniusG-ShotG512.jpg Invalid EXIF text encoding for UserComment
+GoogleNexusS.jpg Invalid EXIF text encoding for UserComment
+HP_PhotoSmart318.jpg Bad InteropOffset SubDirectory start
+HP_PhotosmartM737.jpg Unrecognized IPTC record 0 (ignored)
+HTC_7Mozart.jpg Bad InteropIFD offset for tag 0x0005
+HTC_7ProT7576.jpg GPS pointer references previous InteropIFD directory
+HTC_P3702.jpg Bad IFD2 directory
+HTC_TouchDiamondP3700.jpg Bad IFD2 directory
+JVC_GC-A55.jpg Bad format (59698) for IFD0 entry 0
+KodakEASYSHARE_C763Zoom.jpg Bad InteropOffset SubDirectory start
+KodakEASYSHARE_M5370.jpg JPEG format error
+KodakEASYSHARE_V1003Zoom.jpg Invalid EXIF text encoding for UserComment
+KodakEASYSHARE_V803Zoom.jpg Invalid EXIF text encoding for UserComment
+KodakProBack.jpg InteropIFD pointer references previous IFD0 directory
+KodakProSLRn.jpg InteropIFD pointer references previous IFD0 directory
+KodakZe1.jpg Invalid EXIF text encoding for SerialNumber
+KodakZx5.jpg Invalid EXIF text encoding for SerialNumber
+KonicaKD-25.jpg Invalid EXIF text encoding for UserComment
+LG_BL40.jpg Bad PrintIM size
+LG_GT365.jpg Invalid EXIF text encoding for UserComment
+LG_GW550.jpg Suspicious IFD1 offset for XResolution
+LG_H631.jpg Invalid EXIF text encoding for UserComment
+LG_KF600.jpg Invalid EXIF text encoding for UserComment
+LG_KM380.jpg Invalid EXIF text encoding for UserComment
+LG_KS360.jpg Invalid EXIF text encoding for UserComment
+LeicaM.jpg Ignored Leica MakerNote trailer
+LeicaQ_Typ116.jpg Bad length ICC_Profile (length 3144)
+LeicaS2.jpg Ignored Leica MakerNote trailer
+LeicaSL_Typ601.jpg Bad length ICC_Profile (length 3144)
+LeicaS_Typ007.jpg Bad length ICC_Profile (length 560)
+Lumicron616z3.jpg Invalid EXIF text encoding for UserComment
+LumicronLDC-4028.jpg Invalid EXIF text encoding for UserComment
+LumicronLDC-660S.jpg Invalid EXIF text encoding for UserComment
+Medion.jpg Invalid EXIF text encoding for UserComment
+Medion636Z3.jpg Invalid EXIF text encoding for UserComment
+MinoltaDiMAGE_E223.jpg Invalid PrintIM header
+MotorolaA1600.jpg Invalid EXIF text encoding for UserComment
+MotorolaEZX.jpg Invalid EXIF text encoding for UserComment
+MotorolaMotoG.jpg JPEG format error
+MotorolaRAZRV3x.jpg Invalid EXIF text encoding for UserComment
+MotorolaXT1562.jpg JPEG format error
+MotorolaXT1572.jpg JPEG format error
+MotorolaXT1575.jpg JPEG format error
+MotorolaXT1580.jpg JPEG format error
+MotorolaXT1585.jpg JPEG format error
+MoultrieA-5.jpg Bad PrintIM size
+MoultrieD-555i.jpg Bad PrintIM size
+MoultrieM-880c.jpg Bad PrintIM size
+MoultrieM-990n.jpg Bad PrintIM size
+Nokia800.jpg GPS pointer references previous InteropIFD directory
+NoritsuSI-2000.jpg Bad InteropOffset SubDirectory start
+PanasonicDMC-F7.jpg Suspicious ExifIFD offset for CFAPattern
+PentaconDPix740Z.jpg Invalid EXIF text encoding for UserComment
+PentaconPRAKTICA_LM7403.jpg Invalid EXIF text encoding for UserComment
+PentaxOptioS30.jpg Invalid EXIF text encoding for UserComment
+PentaxOptioT10.jpg Invalid EXIF text encoding for UserComment
+PentaxOptioT20.jpg Invalid EXIF text encoding for UserComment
+PolaroidA310.jpg Invalid EXIF text encoding for UserComment
+PolaroidA500.jpg Invalid EXIF text encoding for UserComment
+PolaroidA500C.jpg Invalid EXIF text encoding for UserComment
+PolaroidP4055.jpg Invalid EXIF text encoding for UserComment
+PolaroidP5055.jpg Invalid EXIF text encoding for UserComment
+PolaroidPDC4355.jpg Invalid EXIF text encoding for UserComment
+PolaroidPDC5070.jpg Invalid EXIF text encoding for UserComment
+PolaroidPDC5070CMOS.jpg Invalid EXIF text encoding for UserComment
+PolaroidPDC5080.jpg Invalid EXIF text encoding for UserComment
+Polaroid_izone300.jpg Invalid EXIF text encoding for UserComment
+Polaroid_izone550.jpg Invalid EXIF text encoding for UserComment
+ReconyxRM30.jpg Invalid EXIF text encoding for UserComment
+RicohCaplio300G.jpg Invalid EXIF text encoding for UserComment
+RicohCaplio400Gwide.jpg Invalid EXIF text encoding for UserComment
+RicohCaplioG3modelM.jpg Invalid EXIF text encoding for UserComment
+RicohCaplioG3modelS.jpg Invalid EXIF text encoding for UserComment
+RicohCaplioG4.jpg Invalid EXIF text encoding for UserComment
+RicohCaplioG4wide.jpg Invalid EXIF text encoding for UserComment
+RicohCaplioGX.jpg Invalid EXIF text encoding for UserComment
+RicohCaplioGX8.jpg Invalid EXIF text encoding for UserComment
+RicohCaplioProG3.jpg Invalid EXIF text encoding for UserComment
+RicohCaplioR1.jpg Invalid EXIF text encoding for UserComment
+RicohCaplioR1S.jpg Invalid EXIF text encoding for UserComment
+RicohCaplioR1V.jpg Invalid EXIF text encoding for UserComment
+RicohCaplioR2.jpg Invalid EXIF text encoding for UserComment
+RicohCaplioR2S.jpg Invalid EXIF text encoding for UserComment
+RicohCaplioRR30.jpg Invalid EXIF text encoding for UserComment
+RicohCaplioRX.jpg Invalid EXIF text encoding for UserComment
+RicohCaplioRZ1.jpg Invalid EXIF text encoding for UserComment
+RicohG3.jpg Invalid EXIF text encoding for UserComment
+RolleiRCP-10325X.jpg Invalid EXIF text encoding for UserComment
+RolleiRCP-8325X.jpg Invalid EXIF text encoding for UserComment
+Rollei_dr5.jpg Invalid EXIF text encoding for UserComment
+Sagem_my401C.jpg Invalid EXIF text encoding for UserComment
+Sagem_my411C.jpg Invalid EXIF text encoding for UserComment
+Sagem_my411V.jpg Invalid EXIF text encoding for UserComment
+Sagem_my411X.jpg Invalid EXIF text encoding for UserComment
+SamsungAnycallSGH-i640.jpg Invalid EXIF text encoding for UserComment
+SamsungDigimax101.jpg Bad format (32) for IFD0 entry 1
+SamsungDigimax360.jpg Invalid PrintIM header
+SamsungDigimax420.jpg Invalid PrintIM header
+SamsungGT-B2710.jpg Bad PrintIM size
+SamsungGT-B3410W.jpg Invalid EXIF text encoding for UserComment
+SamsungGT-B5310.jpg Invalid EXIF text encoding for UserComment
+SamsungGT-B7320.jpg Invalid EXIF text encoding for UserComment
+SamsungGT-I8700.jpg Bad InteropIFD directory
+SamsungGT-I9100.jpg Bad IFD0 offset for InteropVersion
+SamsungGT-M3710.jpg Invalid EXIF text encoding for UserComment
+SamsungGT-S3650.jpg Invalid EXIF text encoding for UserComment
+SamsungGT-S5233T.jpg Invalid EXIF text encoding for UserComment
+SamsungGT-S5620.jpg IFD1 pointer references previous GPS directory
+SamsungGT-S7070.jpg Invalid EXIF text encoding for UserComment
+SamsungIT100.jpg Invalid EXIF text encoding for UserComment
+SamsungS5600.jpg Bad PrintIM size
+SamsungSCH-A970.jpg Suspicious IFD0 offset for YCbCrPositioning
+SamsungSCH-U620.jpg Bad format (500) for IFD0 entry 8
+SamsungSGH-E740.jpg Bad IFD1 directory
+SamsungSGH-F480.jpg Bad PrintIM size
+SamsungSGH-I917.jpg Bad InteropIFD directory
+SamsungSGH-J210.jpg Bad IFD1 directory
+SamsungSGH-i900.jpg Invalid EXIF text encoding for UserComment
+SamsungSGH-i908.jpg Invalid EXIF text encoding for UserComment
+SamsungSPH-A800.jpg IFD1 pointer references previous InteropIFD directory
+SamsungSPH-A940.jpg IFD1 pointer references previous InteropIFD directory
+SamsungSPH-S1000.jpg Invalid EXIF text encoding for UserComment
+SamsungST30.jpg Bad MPF1 directory
+SamsungST65.jpg Bad MPF1 directory
+SamsungST96.jpg Suspicious IFD1 offset for XResolution
+SamsungWB2200F.jpg Bad MPF1 directory
+SamsungWB750.jpg Suspicious IFD1 offset for XResolution
+SanyoAZ3.jpg Invalid PrintIM header
+SanyoVPC-MZ3GX.jpg Bad ExifIFD offset for CompressedBitsPerPixel
+SigmaDP1Merrill.jpg Bad PrintIM size
+SigmaDP2Merrill.jpg Bad PrintIM size
+SigmaDP3Merrill.jpg Bad PrintIM size
+SigmaSD14.jpg Bad length ICC_Profile (length 3144)
+SigmaSD9.jpg Bad length ICC_Profile (length 3144)
+Skanhex524Z3.jpg Invalid EXIF text encoding for UserComment
+Skanhex636Z3.jpg Invalid EXIF text encoding for UserComment
+SonyDCR-PC3.jpg Invalid EXIF text encoding for UserComment
+SonyDCR-TRV740.jpg Invalid EXIF text encoding for UserComment
+SonyDSC-W800.jpg Bad MPF1 directory
+SonyEricssonT707.jpg Bad format (256) for InteropIFD entry 0
+SunplusSPCA536.jpg Invalid EXIF text encoding for UserComment
+ToshibaPDR-T15.jpg Bad InteropOffset SubDirectory start
+Trust1210K_POWERCAM_Zoom.jpg Invalid PrintIM header
+VivitarViviCam3765.jpg Invalid PrintIM header
+Vodafone715.jpg Bad InteropOffset SubDirectory start
+Yakumo524Z3.jpg Invalid EXIF text encoding for UserComment
+YakumoAG.jpg Invalid EXIF text encoding for UserComment
