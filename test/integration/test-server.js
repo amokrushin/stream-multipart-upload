@@ -6,6 +6,7 @@ const { request, Agent } = require('http');
 const async = require('async');
 const _ = require('lodash');
 const { fork } = require('child_process');
+const FormData = require('form-data');
 const oboe = require('oboe');
 
 const keepAliveAgent = new Agent({ keepAlive: true });
@@ -57,11 +58,11 @@ test('collect samples', (t) => {
 });
 
 function uploadSeries(files, callback) {
-    const boundary = '96187754517167571559282392224318';
+    const form = new FormData();
     const rq = request({
         method: 'post',
         port,
-        headers: { 'content-type': `multipart/form-data; boundary=${boundary}` },
+        headers: form.getHeaders(),
         agent: keepAliveAgent,
     }, (res) => {
         if (res.statusCode !== 200) {
@@ -73,41 +74,8 @@ function uploadSeries(files, callback) {
             })
             .done(callback);
     });
-
-    async.eachSeries(files, (filePath, next) => {
-        const file = fs.createReadStream(filePath);
-        let needDrain = false;
-        rq.write([
-            `--${boundary}`,
-            `Content-Disposition: form-data; name="file"; filename=${filePath}`,
-            'Content-Type: image/jpeg',
-            '',
-        ].join('\r\n').concat('\r\n'));
-        const onData = (data) => {
-            needDrain = !rq.write(data);
-            if (needDrain) {
-                file.removeListener('data', onData);
-                rq.once('drain', () => {
-                    needDrain = false;
-                    file.on('data', onData);
-                });
-            }
-        };
-        file.on('data', onData);
-        file.once('end', () => {
-            rq.write('\r\n');
-            if (needDrain) {
-                rq.once('drain', () => {
-                    next();
-                });
-            } else {
-                next();
-            }
-        });
-    }, () => {
-        rq.write(`--${boundary}--\r\n`);
-        rq.end();
-    });
+    files.forEach(filePath => form.append('file', fs.createReadStream(filePath)));
+    form.pipe(rq);
 }
 
 test('upload files', (t) => {
