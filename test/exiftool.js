@@ -21,7 +21,7 @@ const testData = require('./fixtures/test-data.json')
             'orientation',
             'gps',
             'camera',
-            'error',
+            'warning',
         ]),
     }));
 

@@ -238,7 +238,7 @@
     "mimetype": "image/jpeg",
     "size": 65536,
     "sha1": "2wS4yY3RzB1fernF1mXpM1RfZQWb",
-    "error": "JPEG format error"
+    "warning": "JPEG format error"
   },
   {
     "filename": "8px-htc-desire.jpg",
@@ -271,7 +271,7 @@
       "iso": "ISO64",
       "model": "Motorola Moto G (4)"
     },
-    "error": "JPEG format error"
+    "warning": "JPEG format error"
   },
   {
     "filename": "8px-htc-mytouch-4g.jpg",
