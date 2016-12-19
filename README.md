@@ -55,34 +55,38 @@ const server = http.createServer((req, res) => {
 
 <!-- toc -->
 
-- [General purpose transform streams](#general-purpose-transform-streams)
-  * [Multipart](#multipart)
-  * [Zip](#zip)
-  * [Merge](#merge)
-  * [Property](#property)
-  * [JsonStream](#jsonstream)
-- [Pre-processor transform streams](#pre-processor-transform-streams)
-  * [MultipartError](#multiparterror)
-    + [Input chunk format](#input-chunk-format)
-    + [Output chunk format](#output-chunk-format)
-  * [FileSize](#filesize)
-    + [Input chunk](#input-chunk)
-    + [Output chunk format](#output-chunk-format-1)
-  * [FileHash](#filehash)
-    + [Input chunk](#input-chunk-1)
-    + [Output chunk format](#output-chunk-format-2)
-  * [Exiftool](#exiftool)
-    + [Input chunk](#input-chunk-2)
-    + [Output chunk format](#output-chunk-format-3)
-    + [Output chunk example](#output-chunk-example)
-    + [Exiftool.end](#exiftoolend)
-  * [StorageTempLocal](#storagetemplocal)
-    + [Input chunk](#input-chunk-3)
-    + [Output chunk format](#output-chunk-format-4)
-- [Post-processor transform streams](#post-processor-transform-streams)
-  * [StorageLocal](#storagelocal)
-    + [Input chunk](#input-chunk-4)
-    + [Output chunk format](#output-chunk-format-5)
+  * [General purpose transform streams](#general-purpose-transform-streams)
+    + [Multipart](#multipart)
+    + [Zip](#zip)
+    + [Merge](#merge)
+    + [Property](#property)
+    + [JsonStream](#jsonstream)
+  * [Pre-processor transform streams](#pre-processor-transform-streams)
+    + [MultipartError](#multiparterror)
+      - [Input chunk format](#input-chunk-format)
+      - [Output chunk format](#output-chunk-format)
+    + [FileSize](#filesize)
+      - [Input chunk](#input-chunk)
+      - [Output chunk format](#output-chunk-format-1)
+    + [FileHash](#filehash)
+      - [Input chunk](#input-chunk-1)
+      - [Output chunk format](#output-chunk-format-2)
+    + [Exiftool](#exiftool)
+      - [Input chunk](#input-chunk-2)
+      - [Output chunk format](#output-chunk-format-3)
+      - [Output chunk example](#output-chunk-example)
+      - [Exiftool.end](#exiftoolend)
+    + [StorageTempLocal](#storagetemplocal)
+      - [Input chunk](#input-chunk-3)
+      - [Output chunk format](#output-chunk-format-4)
+  * [Post-processor transform streams](#post-processor-transform-streams)
+    + [StorageLocal](#storagelocal)
+      - [Input chunk](#input-chunk-4)
+      - [Output chunk format](#output-chunk-format-5)
+- [Performance](#performance)
+  * [Hardware](#hardware)
+  * [Local server, local client, 30 DSLR photos with average size of 10Mb each](#local-server-local-client-30-dslr-photos-with-average-size-of-10mb-each)
+  * [Local server, local client, 6610 exiftool sample images](#local-server-local-client-6610-exiftool-sample-images)
 
 <!-- tocstop -->
 
@@ -358,15 +362,27 @@ If input chunk metadata has error field then temporary file will be removed othe
 KVM, 1 vCPU Intel Xeon E5-2670v2, 2GB RAM, SSD
 ```
 
-### Local server, local client, 30 DSLR photos from Canon 650d with average size of 10Mb each
+### Local server, local client, 30 DSLR photos with average size of 10Mb each
+
 ```
-  Task: upload 30 files in 15 multipart/form-data requests with concurrency 10
+    task: concurrency=10, files-per-request=10
+    requests: 3
+    files: 30
+    size: 187.44 Mb
+    speed: 721.97 Mbit/s, 14.44 fp files per second
+```
 
-✔ Done!
+### Local server, local client, 6610 exiftool sample images
 
-  30 files uploaded in 3.999s
-  Size: 314.42 Mb
-  Speed: 628.99 Mbit/s, 7.50 files per second
+[exiftool sample images]([exiftool-sample-images])
+
+```
+    task: concurrency=10, files-per-request=10
+    requests: 661
+    files: 6610
+    size: 181.34 Mb
+    speed: 22.81 Mbit/s, 103.93 files per second
+    cpu usage: 100% (40% node process, 60% exiftool process)
 ```
 
 
@@ -382,3 +398,5 @@ KVM, 1 vCPU Intel Xeon E5-2670v2, 2GB RAM, SSD
 [node-version-url]: https://nodejs.org/en/download/
 [license-image]: https://img.shields.io/npm/l/stream-multipart-upload.svg
 [license-url]: https://raw.githubusercontent.com/amokrushin/stream-multipart-upload/master/LICENSE.txt
+
+[exiftool-sample-images]: http://owl.phy.queensu.ca/~phil/exiftool/sample_images.html
