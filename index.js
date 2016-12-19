@@ -6,5 +6,6 @@ module.exports = Object.assign(
     {
         Multipart: require('stream-multipart'),
         Zip: require('stream-zip'),
+        TestServer: require('./test/util/TestServer'),
     }
 );
