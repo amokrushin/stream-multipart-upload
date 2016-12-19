@@ -370,12 +370,12 @@ KVM, 1 vCPU Intel Xeon E5-2670v2, 2GB RAM, SSD
     requests: 3
     files: 30
     size: 187.44 Mb
-    speed: 721.97 Mbit/s, 14.44 fp files per second
+    speed: 721.97 Mbit/s, 14.44 files per second
 ```
 
 ### Local server, local client, 6610 exiftool sample images
 
-[exiftool sample images]([exiftool-sample-images])
+[exiftool sample images][exiftool-sample-images]
 
 ```
     task: concurrency=10, files-per-request=10
