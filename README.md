@@ -51,10 +51,9 @@ const server = http.createServer((req, res) => {
 });
 ```
 
-## API
-
 <!-- toc -->
 
+- [API](#api)
   * [General purpose transform streams](#general-purpose-transform-streams)
     + [Multipart](#multipart)
     + [Zip](#zip)
@@ -89,6 +88,8 @@ const server = http.createServer((req, res) => {
   * [Local server, local client, 6610 exiftool sample images](#local-server-local-client-6610-exiftool-sample-images)
 
 <!-- tocstop -->
+
+## API
 
 ### General purpose transform streams
 
