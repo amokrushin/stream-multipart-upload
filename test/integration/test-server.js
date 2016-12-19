@@ -1,16 +1,14 @@
-// return;
 /* eslint-disable no-console */
 const test = require('tape');
 const path = require('path');
 const fs = require('fs-extra');
-const url = require('url');
 const { request, Agent } = require('http');
 const async = require('async');
 const _ = require('lodash');
-const { Transform } = require('stream');
 const { fork } = require('child_process');
-const keepAliveAgent = new Agent({ keepAlive: true });
 const oboe = require('oboe');
+
+const keepAliveAgent = new Agent({ keepAlive: true });
 
 const SAMPLES_DIR = path.resolve(__dirname, '../samples/exiftool');
 const TMP_DIR = path.resolve(__dirname, '../../temp');
