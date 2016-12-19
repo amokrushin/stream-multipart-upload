@@ -366,11 +366,11 @@ KVM, 1 vCPU Intel Xeon E5-2670v2, 2GB RAM, SSD
 ### Local server, local client, 30 DSLR photos with average size of 10Mb each
 
 ```
-    task: concurrency=10, files-per-request=10
+    task: concurrency=3, files-per-request=10
     requests: 3
     files: 30
-    size: 187.44 Mb
-    speed: 721.97 Mbit/s, 14.44 files per second
+    size: 314.42 Mb
+    speed: 891.96 Mbit/s, 10.64 files per second
 ```
 
 ### Local server, local client, 6610 exiftool sample images
