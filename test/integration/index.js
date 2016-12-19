@@ -6,6 +6,7 @@ const oboe = require('oboe');
 const FormData = require('form-data');
 const Request = require('../../lib/util/Request');
 const _ = require('lodash');
+
 const {
     // eslint-disable-next-line no-unused-vars
     debugFlow,
@@ -43,9 +44,8 @@ let server;
 
 test('setup', (t) => {
     server = http.createServer((req, res) => {
-        const multipart = req.pipe(new Multipart({ headers: req.headers }));
+        const multipart = new Multipart({ headers: req.headers });
         const zip = new Zip();
-        const result = zip.pipe(new Merge()).pipe(new JsonStream());
 
         multipart.once('data', () => {
             res.writeHead(200, { 'Content-Type': 'application/json' });
@@ -64,7 +64,12 @@ test('setup', (t) => {
         multipart.pipe(new FileHash({ encoding: 'bs58' })).pipe(zip);
         multipart.pipe(new Exiftool()).pipe(zip);
 
-        result.pipe(res);
+        zip
+            .pipe(new Merge())
+            .pipe(new JsonStream())
+            .pipe(res);
+
+        req.pipe(multipart);
 
         /*
         const debug1 = debugFlow(req);
