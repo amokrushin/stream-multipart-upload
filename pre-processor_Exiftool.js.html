@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>pre-processor/Exiftool.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Exiftool.html">Exiftool</a><ul class='methods'><li data-type='method'><a href="Exiftool.html#.end">end</a></li><li data-type='method'><a href="Exiftool.html#read">read</a></li><li data-type='method'><a href="Exiftool.html#write">write</a></li></ul></li><li><a href="FileHash.html">FileHash</a><ul class='methods'><li data-type='method'><a href="FileHash.html#read">read</a></li><li data-type='method'><a href="FileHash.html#write">write</a></li></ul></li><li><a href="FileSize.html">FileSize</a></li><li><a href="Merge.html">Merge</a><ul class='methods'><li data-type='method'><a href="Merge.html#read">read</a></li><li data-type='method'><a href="Merge.html#write">write</a></li></ul></li><li><a href="Pick.html">Pick</a><ul class='methods'><li data-type='method'><a href="Pick.html#read">read</a></li><li data-type='method'><a href="Pick.html#write">write</a></li></ul></li><li><a href="StorageLocal.html">StorageLocal</a><ul class='methods'><li data-type='method'><a href="StorageLocal.html#read">read</a></li><li data-type='method'><a href="StorageLocal.html#write">write</a></li></ul></li><li><a href="StorageS3.html">StorageS3</a><ul class='methods'><li data-type='method'><a href="StorageS3.html#read">read</a></li><li data-type='method'><a href="StorageS3.html#write">write</a></li></ul></li><li><a href="StorageTempLocal.html">StorageTempLocal</a><ul class='methods'><li data-type='method'><a href="StorageTempLocal.html#read">read</a></li><li data-type='method'><a href="StorageTempLocal.html#write">write</a></li></ul></li><li><a href="StorageTempS3.html">StorageTempS3</a><ul class='methods'><li data-type='method'><a href="StorageTempS3.html#read">read</a></li><li data-type='method'><a href="StorageTempS3.html#write">write</a></li></ul></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">pre-processor/Exiftool.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/* eslint-disable consistent-return */
+const { Readable, Writable, Transform } = require('stream');
+const fs = require('fs-extra');
+const path = require('path');
+const os = require('os');
+const uuid = require('uuid');
+const async = require('async');
+const { exiftool } = require('exiftool-vendored');
+const { Task } = require('exiftool-vendored/lib/task');
+const { ExiftoolTask } = require('../util/ExiftoolTask');
+const { InvalidChunk } = require('../errors');
+
+class TemporaryFile extends Writable {
+    constructor({ filePath, breakLength }, options) {
+        super(options);
+        this.breakLength = breakLength;
+        this.fileStream = fs.createWriteStream(filePath);
+        this.fileSize = 0;
+        this.finished = false;
+
+        this.once('finish', () => {
+            if (!this.finished) {
+                this.fileStream.end();
+            }
+        });
+
+        this.fileStream.once('finish', () => {
+            this.finished = true;
+        });
+    }
+
+    _write(chunk, encoding, callback) {
+        if (this.fileSize &lt; this.breakLength) {
+            this.fileStream.write(chunk, callback);
+            this.fileSize += chunk.length;
+        } else {
+            if (!this.finished) {
+                this.fileStream.end();
+            }
+            callback();
+        }
+    }
+}
+
+class Exiftool extends Transform {
+    /**
+     * Extract file metadata using {@link http://www.sno.phy.queensu.ca/~phil/exiftool/|exiftool} and node.js
+     *      {@link https://github.com/mceachen/exiftool-vendored|exiftool-vendored} wrapper.
+     * @param {Object} options
+     *      Exiftool options.
+     * @param {string} [options.tmpDir=os.tmpdir()]
+     *      Directory for temporary files.
+     * @param {boolean} [options.ensureDir=true]
+     *      Ensure that dir exists, create if not.
+     * @param {number} [options.readLimit=524288]
+     *      The EXIF data located at the beginning of the file, so there is no reason to read the file completely.
+     *      `readLimit` is a limit following which the reading will be aborted and temporary file will be passed to
+     *     exiftool. Default: 512Kb.
+     * @param {Function} [options.ExiftoolTask={@link https://github.com/amokrushin/stream-multipart-upload/blob/master/lib/util/ExiftoolTask.js|ExiftoolTask}]
+     *     Override default exiftool task. Should inherit {@link https://github.com/mceachen/exiftool-vendored/blob/master/src/task.ts|Task}
+     * @extends Transform
+     */
+    constructor(options) {
+        super({ objectMode: true, highWaterMark: 1 });
+
+        this.options = Object.assign({
+            tmpDir: os.tmpdir(),
+            ensureDir: true,
+            readLimit: 512 * 1024,
+            ExiftoolTask,
+        }, options);
+
+        if (!(this.options.ExiftoolTask.prototype instanceof Task)) {
+            throw new TypeError('ExiftoolTask should inherit Task');
+        }
+
+        if (options &amp;&amp; options.tmpDir &amp;&amp; options.ensureDir !== false) {
+            fs.ensureDirSync(this.options.tmpDir);
+        }
+
+        // eslint-disable-next-line no-bitwise
+        fs.accessSync(this.options.tmpDir, fs.constants.R_OK | fs.constants.W_OK);
+    }
+
+    _transform(chunk, encoding, callback) {
+        if (typeof chunk !== 'object' || !(chunk.file instanceof Readable)) {
+            return callback(null, {
+                errors: [new InvalidChunk('Invalid chunk format: `file` is not a readable stream')],
+            });
+        }
+
+        const localTmpFilename = uuid.v1();
+        const localTmpFilepath = path.join(this.options.tmpDir, localTmpFilename);
+
+        const temporaryFile = new TemporaryFile({
+            filePath: localTmpFilepath,
+            breakLength: this.options.readLimit,
+        });
+
+        async.series({
+            finish: cb => temporaryFile.on('finish', cb),
+            metadata: (cb) => {
+                exiftool.enqueueTask(this.options.ExiftoolTask.extractInfo(localTmpFilepath)).promise
+                    .then(metadata => cb(null, metadata))
+                    .catch(cb);
+            },
+            unlink: cb => fs.unlink(localTmpFilepath, cb),
+        }, (err, { metadata }) => {
+            if (err) {
+                callback(null, { errors: [err] });
+            }
+            callback(null, { metadata });
+        });
+
+        chunk.file.pipe(temporaryFile);
+    }
+
+    /**
+     * Shuts down exiftool child process.
+     * @static
+     */
+    static end() {
+        exiftool.end();
+    }
+
+    /**
+     * @function write
+     * @memberof Exiftool#
+     * @param {Exiftool~InputChunk} chunk
+     * @param {function} callback
+     */
+
+    /**
+     * @typedef {Object} Exiftool~InputChunk
+     * @property {Readable} file
+     * @example
+     * {
+     *   file: ReadableStream
+     * }
+     */
+
+    /**
+     * @function read
+     * @memberof Exiftool#
+     * @returns {?Exiftool~OutputChunk}
+     */
+
+    /**
+     * @typedef {Object} Exiftool~OutputChunk
+     * @property {Object} metadata
+     * @property {string} [metadata.create]
+     * @property {string} [metadata.modify]
+     * @property {string} [metadata.contentType]
+     * @property {number} [metadata.width]
+     * @property {number} [metadata.height]
+     * @property {number} [metadata.orientation]
+     * @property {number} [metadata.gpsLatitude]
+     * @property {number} [metadata.gpsLongitude]
+     * @property {number} [metadata.gpsTimestamp]
+     * @property {string} [metadata.cameraModel]
+     * @property {string} [metadata.cameraAperture]
+     * @property {string} [metadata.cameraExposureTime]
+     * @property {string} [metadata.cameraFocalLength]
+     * @property {string} [metadata.cameraISO]
+     * @property {string} [metadata.cameraDatetime]
+     * @property {string} [metadata.cameraLensModel]
+     * @property {number} [metadata.cameraFlashMode]
+     * @property {boolean} [metadata.cameraFlashFired]
+     * @property {Array&lt;Error>} [errors]
+     * @example
+     * {
+     *   create: "2015.08.01 19:10:25",
+     *   modify: "2015.08.01 19:10:25",
+     *   contentType: "image/jpeg",
+     *   width: 1,
+     *   height: 1,
+     *   orientation: 6,
+     *   gpsLatitude: 56.1235333333333,
+     *   gpsLongitude: 38.6031527777778,
+     *   gpsTimestamp: 1438445417,
+     *   cameraModel: "ASUS T00J",
+     *   cameraAperture: "f/2",
+     *   cameraExposureTime: "1/20s",
+     *   cameraFocalLength: "2.69mm",
+     *   cameraISO: "ISO360",
+     *   cameraDatetime: "2015.08.01 19:10:25",
+     *   cameraFlashMode: 0,
+     *   cameraFlashFired: false
+     * }
+     */
+}
+
+module.exports = Exiftool;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

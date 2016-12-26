@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>pre-processor/FileHash.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Exiftool.html">Exiftool</a><ul class='methods'><li data-type='method'><a href="Exiftool.html#.end">end</a></li><li data-type='method'><a href="Exiftool.html#read">read</a></li><li data-type='method'><a href="Exiftool.html#write">write</a></li></ul></li><li><a href="FileHash.html">FileHash</a><ul class='methods'><li data-type='method'><a href="FileHash.html#read">read</a></li><li data-type='method'><a href="FileHash.html#write">write</a></li></ul></li><li><a href="FileSize.html">FileSize</a></li><li><a href="Merge.html">Merge</a><ul class='methods'><li data-type='method'><a href="Merge.html#read">read</a></li><li data-type='method'><a href="Merge.html#write">write</a></li></ul></li><li><a href="Pick.html">Pick</a><ul class='methods'><li data-type='method'><a href="Pick.html#read">read</a></li><li data-type='method'><a href="Pick.html#write">write</a></li></ul></li><li><a href="StorageLocal.html">StorageLocal</a><ul class='methods'><li data-type='method'><a href="StorageLocal.html#read">read</a></li><li data-type='method'><a href="StorageLocal.html#write">write</a></li></ul></li><li><a href="StorageS3.html">StorageS3</a><ul class='methods'><li data-type='method'><a href="StorageS3.html#read">read</a></li><li data-type='method'><a href="StorageS3.html#write">write</a></li></ul></li><li><a href="StorageTempLocal.html">StorageTempLocal</a><ul class='methods'><li data-type='method'><a href="StorageTempLocal.html#read">read</a></li><li data-type='method'><a href="StorageTempLocal.html#write">write</a></li></ul></li><li><a href="StorageTempS3.html">StorageTempS3</a><ul class='methods'><li data-type='method'><a href="StorageTempS3.html#read">read</a></li><li data-type='method'><a href="StorageTempS3.html#write">write</a></li></ul></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">pre-processor/FileHash.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/* eslint-disable consistent-return */
+const { Readable, Transform } = require('stream');
+const crypto = require('crypto');
+const bs58 = require('bs58');
+const { InvalidChunk } = require('../errors');
+
+class FileHash extends Transform {
+    /**
+     * Calculate a hash digest
+     * @param {Object} options
+     *      FileHash options.
+     * @param {string} [options.algorithm='sha1']
+     *      Hash function algorithm.
+     * @param {'hex'|'bs58'} [options.encoding='hex']
+     *      Hash output encoding.
+     * @extends Transform
+     */
+    constructor(options) {
+        super({ objectMode: true, highWaterMark: 1 });
+        this.algorithm = (options &amp;&amp; options.algorithm) || 'sha1';
+        this.encoding = (options &amp;&amp; options.encoding) || 'hex'; // hex, bs58
+    }
+
+    _transform(chunk, encoding, callback) {
+        if (typeof chunk !== 'object' || !(chunk.file instanceof Readable)) {
+            return callback(null, {
+                errors: [new InvalidChunk('Invalid chunk format: `file` is not a readable stream')],
+            });
+        }
+
+        const stream = crypto
+            .createHash(this.algorithm)
+            .setEncoding('hex')
+            .once('finish', () => {
+                const hash = this.encoding === 'bs58'
+                    ? bs58.encode(new Buffer(stream.read(), 'hex'))
+                    : stream.read();
+                callback(null, {
+                    metadata: { [this.algorithm]: hash },
+                });
+            });
+
+        chunk.file.pipe(stream);
+    }
+
+    /**
+     * @function write
+     * @memberof FileHash#
+     * @param {FileHash~InputChunk} chunk
+     * @param {function} callback
+     */
+
+    /**
+     * @typedef {Object} FileHash~InputChunk
+     * @property {Readable} file
+     */
+
+    /**
+     * @function read
+     * @memberof FileHash#
+     * @returns {?FileHash~OutputChunk}
+     */
+
+    /**
+     * @typedef {Object} FileHash~OutputChunk
+     * @property {Object} metadata
+     * @property {string} metadata.[algorithm]] Hash digests of file data using the given algorithm.
+     * @property {Array&lt;Error>} [errors]
+     */
+}
+
+module.exports = FileHash;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

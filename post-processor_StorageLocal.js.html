@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>post-processor/StorageLocal.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Exiftool.html">Exiftool</a><ul class='methods'><li data-type='method'><a href="Exiftool.html#.end">end</a></li><li data-type='method'><a href="Exiftool.html#read">read</a></li><li data-type='method'><a href="Exiftool.html#write">write</a></li></ul></li><li><a href="FileHash.html">FileHash</a><ul class='methods'><li data-type='method'><a href="FileHash.html#read">read</a></li><li data-type='method'><a href="FileHash.html#write">write</a></li></ul></li><li><a href="FileSize.html">FileSize</a></li><li><a href="Merge.html">Merge</a><ul class='methods'><li data-type='method'><a href="Merge.html#read">read</a></li><li data-type='method'><a href="Merge.html#write">write</a></li></ul></li><li><a href="Pick.html">Pick</a><ul class='methods'><li data-type='method'><a href="Pick.html#read">read</a></li><li data-type='method'><a href="Pick.html#write">write</a></li></ul></li><li><a href="StorageLocal.html">StorageLocal</a><ul class='methods'><li data-type='method'><a href="StorageLocal.html#read">read</a></li><li data-type='method'><a href="StorageLocal.html#write">write</a></li></ul></li><li><a href="StorageS3.html">StorageS3</a><ul class='methods'><li data-type='method'><a href="StorageS3.html#read">read</a></li><li data-type='method'><a href="StorageS3.html#write">write</a></li></ul></li><li><a href="StorageTempLocal.html">StorageTempLocal</a><ul class='methods'><li data-type='method'><a href="StorageTempLocal.html#read">read</a></li><li data-type='method'><a href="StorageTempLocal.html#write">write</a></li></ul></li><li><a href="StorageTempS3.html">StorageTempS3</a><ul class='methods'><li data-type='method'><a href="StorageTempS3.html#read">read</a></li><li data-type='method'><a href="StorageTempS3.html#write">write</a></li></ul></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">post-processor/StorageLocal.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/* eslint-disable consistent-return */
+const { Transform } = require('stream');
+const fs = require('fs-extra');
+const path = require('path');
+const { chain, omit, pick } = require('lodash');
+const uuid = require('uuid');
+const { testRequiredChunkFields } = require('../util');
+const { CustomError, MissingRequiredParameter } = require('../errors');
+const async = require('async');
+const EventEmitter = require('events');
+
+class FsCopyError extends CustomError {}
+class FsDeleteError extends CustomError {}
+
+class ChunkHandler extends EventEmitter {
+    constructor(metadata, errors, options) {
+        super();
+        this.options = options;
+        this._state = {
+            tempStorage: pick(metadata, ['localTmpFilepath']),
+            metadata: omit(metadata, ['localTmpFilepath']),
+            errors: chain(errors).castArray().compact().value(),
+        };
+
+        async.series([
+            /* eslint-disable no-confusing-arrow */
+            cb => this._state.errors.length ? cb() : this.copyObject(cb),
+            cb => this.deleteObject(cb),
+            /* eslint-enable no-confusing-arrow */
+        ], this._response.bind(this));
+    }
+
+    _response() {
+        process.nextTick(() => {
+            const { metadata, errors } = this._state;
+            if (errors.length) {
+                this.emit('done', { metadata, errors });
+            } else {
+                this.emit('done', { metadata });
+            }
+        });
+    }
+
+    copyObject(callback) {
+        const { localTmpFilepath } = this._state.tempStorage;
+        const filename = this.getTargetFilename();
+        const filepath = path.join(this.options.dir, `${filename}`);
+
+        fs.move(localTmpFilepath, filepath, (err) => {
+            if (err) {
+                this._state.errors.push(new FsCopyError(err.message));
+            } else {
+                Object.assign(this._state.metadata, {
+                    storageLocalFilename: filename,
+                    storageLocalFilepath: filepath,
+                });
+            }
+            callback();
+        });
+    }
+
+    deleteObject(callback) {
+        const { localTmpFilepath } = this._state.tempStorage;
+
+        fs.remove(localTmpFilepath, (err) => {
+            if (err) {
+                this._state.errors.push(new FsDeleteError(err.message));
+            }
+            callback();
+        });
+    }
+
+    getTargetFilename() {
+        let filename = '';
+        if (typeof this.options.filenameFn === 'function') {
+            filename = this.options.filenameFn(this._state.metadata);
+        } else if (this.options.filenameProperty &amp;&amp; this._state.metadata[this.options.filenameProperty]) {
+            filename = this._state.metadata[this.options.filenameProperty];
+        } else {
+            filename = uuid.v1();
+        }
+        filename += path.extname(this._state.metadata.filename);
+        return filename;
+    }
+}
+
+class StorageLocal extends Transform {
+    /**
+     * Save temporary files.
+     * @param {Object} options
+     *      StorageLocal options.
+     * @param {string} options.dir
+     *      Directory for uploaded files.
+     * @param {boolean} [options.ensureDir=true]
+     *      Ensure that dir exists, create if not.
+     * @param {string} [options.filenameProperty]
+     *      A `metadata` field name to select filename from.
+     * @param {function(object):string} [options.filenameFn]
+     *      A function for selecting target filename, `metadata` object passed as argument.
+     * @extends Transform
+     */
+    constructor(options) {
+        super({ objectMode: true });
+
+        if (!options || !options.dir) {
+            throw new MissingRequiredParameter('Missing required key `dir` in options');
+        }
+
+        this.options = Object.assign({
+            dir: '',
+            ensureDir: true,
+            filenameProperty: null,
+            filenameFn: null,
+        }, options);
+
+        if (this.options.ensureDir !== false) {
+            fs.ensureDirSync(this.options.dir);
+        }
+
+        // eslint-disable-next-line no-bitwise
+        fs.accessSync(options.dir, fs.constants.R_OK | fs.constants.W_OK);
+    }
+
+    _transform({ metadata, errors = [] }, encoding, callback) {
+        const missingFields = testRequiredChunkFields(metadata, [
+            'filename',
+            'localTmpFilepath',
+        ], this.constructor.name, 'metadata');
+
+        if (missingFields) {
+            return callback(null, { metadata, errors: errors.concat(missingFields) });
+        }
+
+        new ChunkHandler(metadata, errors, this.options)
+            .once('done', result => callback(null, result));
+    }
+
+    /**
+     * @function write
+     * @memberof StorageLocal#
+     * @param {StorageLocal~InputChunk} chunk
+     * @param {function} callback
+     */
+
+    /**
+     * @typedef {Object} StorageLocal~InputChunk
+     * @property {Readable} file
+     * @property {Object} metadata
+     * @property {string} metadata.filename
+     * @property {string} metadata.localTmpFilepath
+     * @property {*} [metadata....]
+     *      Extra metadata fields
+     * @property {Error|Array&lt;Error>} [errors]
+     */
+
+    /**
+     * @function read
+     * @memberof StorageLocal#
+     * @returns {?StorageLocal~OutputChunk}
+     */
+
+    /**
+     * @typedef {Object} StorageLocal~OutputChunk
+     * @property {Object} metadata
+     * @property {string} metadata.storageLocalFilename
+     * @property {string} metadata.storageLocalFilepath
+     * @property {*} [metadata....]
+     *      Extra metadata fields
+     * @property {Error|Array&lt;Error>} [errors]
+     */
+}
+
+module.exports = StorageLocal;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

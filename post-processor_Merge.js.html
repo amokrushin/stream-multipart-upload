@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>post-processor/Merge.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Exiftool.html">Exiftool</a><ul class='methods'><li data-type='method'><a href="Exiftool.html#.end">end</a></li><li data-type='method'><a href="Exiftool.html#read">read</a></li><li data-type='method'><a href="Exiftool.html#write">write</a></li></ul></li><li><a href="FileHash.html">FileHash</a><ul class='methods'><li data-type='method'><a href="FileHash.html#read">read</a></li><li data-type='method'><a href="FileHash.html#write">write</a></li></ul></li><li><a href="FileSize.html">FileSize</a></li><li><a href="Merge.html">Merge</a><ul class='methods'><li data-type='method'><a href="Merge.html#read">read</a></li><li data-type='method'><a href="Merge.html#write">write</a></li></ul></li><li><a href="Pick.html">Pick</a><ul class='methods'><li data-type='method'><a href="Pick.html#read">read</a></li><li data-type='method'><a href="Pick.html#write">write</a></li></ul></li><li><a href="StorageLocal.html">StorageLocal</a><ul class='methods'><li data-type='method'><a href="StorageLocal.html#read">read</a></li><li data-type='method'><a href="StorageLocal.html#write">write</a></li></ul></li><li><a href="StorageS3.html">StorageS3</a><ul class='methods'><li data-type='method'><a href="StorageS3.html#read">read</a></li><li data-type='method'><a href="StorageS3.html#write">write</a></li></ul></li><li><a href="StorageTempLocal.html">StorageTempLocal</a><ul class='methods'><li data-type='method'><a href="StorageTempLocal.html#read">read</a></li><li data-type='method'><a href="StorageTempLocal.html#write">write</a></li></ul></li><li><a href="StorageTempS3.html">StorageTempS3</a><ul class='methods'><li data-type='method'><a href="StorageTempS3.html#read">read</a></li><li data-type='method'><a href="StorageTempS3.html#write">write</a></li></ul></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">post-processor/Merge.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const { Transform } = require('stream');
+const { mergeWith } = require('lodash');
+
+class CustomError extends Error {
+    constructor(...args) {
+        super(...args);
+        this.name = this.constructor.name;
+    }
+}
+class InvalidChunk extends CustomError {}
+
+class Merge extends Transform {
+    /**
+     * Merges array of objects to a single object
+     * @extends Transform
+     * @example
+     * new Merge()
+     *   .on('data', (chunk) => {
+     *     console.log(chunk);
+     *   })
+     *   .end([
+     *     { metadata: { a: 1 }, errors: [new Error('a')] },
+     *     { metadata: { b: 2 }, errors: [new Error('b')] },
+     *     { metadata: { a: 3 } },
+     *   ]);
+     *
+     * /*
+     *   Prints:
+     *   {
+     *     metadata: { a: 3, b: 2 },
+     *     errors: [Error: a, Error: b],
+     *   }
+     * *​/
+     */
+    constructor() {
+        super({ objectMode: true });
+    }
+
+    _transform(chunk, encoding, callback) {
+        if (!Array.isArray(chunk)) {
+            return callback(null, {
+                errors: [new InvalidChunk('Invalid chunk format: `chunk` should be an array')],
+            });
+        }
+        for (let i = 0; i &lt; chunk.length; i++) {
+            if (typeof chunk[i] !== 'object') {
+                return callback(null, {
+                    errors: [new InvalidChunk('Invalid chunk format: `chunk` should be an array of objects')],
+                });
+            }
+        }
+
+        const customizer = (obj, src) => {
+            if (Array.isArray(obj)) {
+                return obj.concat(src);
+            }
+        };
+        callback(null, mergeWith(...chunk, customizer));
+    }
+
+    /**
+     * @typedef {Object} Merge~InputChunk
+     * @property {Object} [metadata]
+     * @property {Array&lt;Error>} [errors]
+     */
+
+    /**
+     * @typedef {Object} Merge~OutputChunk
+     * @property {Object} [metadata]
+     * @property {Error|Array&lt;Error>} [errors]
+     */
+
+    /**
+     * @function write
+     * @memberof Merge#
+     * @param {Array&lt;Pick~InputChunk>} chunk
+     * @param {function} callback
+     */
+
+    /**
+     * @function read
+     * @memberof Merge#
+     * @returns {?Pick~OutputChunk}
+     */
+}
+
+module.exports = Merge;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>
