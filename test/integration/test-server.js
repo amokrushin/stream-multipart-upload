@@ -69,8 +69,8 @@ function uploadSeries(files, callback) {
             throw new Error(`HTTP ${res.statusCode} ${res.statusMessage}\n`);
         }
         oboe(res)
-            .node('!*', (item) => {
-                size += item.size;
+            .node('!*', ({ metadata }) => {
+                size += metadata.size;
             })
             .done(callback);
     });

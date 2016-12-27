@@ -20,10 +20,11 @@ const {
     MultipartError,
     // StorageTempLocal,
     Multipart,
-    Property,
+    Pick,
     Zip,
     Merge,
     // StorageLocal,
+    StringifyError,
     JsonStream,
 } = require('../..');
 
@@ -35,7 +36,7 @@ function getTestData() {
         .filter(obj => !/^dummy/.test(obj.filename))
         .map(obj => ({
             file: fs.createReadStream(path.resolve(__dirname, '../samples', obj.filename)),
-            metadata: { filename: obj.filename, mimetype: obj.mimetype },
+            metadata: { filename: obj.filename, contentType: obj.contentType },
             expected: obj,
         }));
 }
@@ -60,12 +61,13 @@ test('setup', (t) => {
 
         multipart.pipe(new MultipartError()).pipe(zip);
         multipart.pipe(new FileSize()).pipe(zip);
-        multipart.pipe(new Property('metadata')).pipe(zip);
+        multipart.pipe(new Pick('metadata')).pipe(zip);
         multipart.pipe(new FileHash({ encoding: 'bs58' })).pipe(zip);
         multipart.pipe(new Exiftool()).pipe(zip);
 
         zip
             .pipe(new Merge())
+            .pipe(new StringifyError())
             .pipe(new JsonStream())
             .pipe(res);
 
@@ -112,11 +114,11 @@ test('example', (t) => {
         });
 
     oboe(rq)
-        .node('!*', (item) => {
+        .node('!*', ({ metadata }) => {
             t.deepEqual(
-                _.omit(item, ['fieldname', 'encoding', 'charset']),
+                _.omit(metadata, ['fieldname', 'encoding', 'charset', 'mimetype']),
                 td[counter].expected,
-                `${item.filename} metadata match`
+                `${metadata.filename} metadata match`
             );
             counter++;
         })
@@ -152,8 +154,9 @@ test('should test broken boundary #1', (t) => {
             .node('!*', (item) => {
                 itemsCounter++;
                 if (itemsCounter === 3) {
-                    t.ok(item.error, 'last item should have an error field');
-                    t.equal(item.error, 'Part terminated early due to unexpected end of multipart data',
+                    t.ok(Array.isArray(item.errors), 'last item should have an errors array');
+                    t.equal(item.errors.length, 1, 'only one error');
+                    t.equal(item.errors[0], 'Part terminated early due to unexpected end of multipart data',
                         'error message match');
                 } else if (item.error) {
                     t.fail('unexpected error');
@@ -181,8 +184,9 @@ test('should test broken boundary #2', (t) => {
         .node('!*', (item) => {
             itemsCounter++;
             if (itemsCounter === 2) {
-                t.ok(item.error, 'last item should have an error field');
-                t.equal(item.error, 'Part terminated early due to unexpected end of multipart data',
+                t.ok(Array.isArray(item.errors), 'last item should have an errors array');
+                t.equal(item.errors.length, 1, 'only one error');
+                t.equal(item.errors[0], 'Part terminated early due to unexpected end of multipart data',
                     'error message match');
             } else if (item.error) {
                 t.fail('unexpected error');

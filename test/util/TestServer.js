@@ -2,11 +2,24 @@ const { createServer } = require('http');
 const Multipart = require('stream-multipart');
 const Zip = require('stream-zip');
 const { Transform, PassThrough } = require('stream');
-const { StorageLocal } = require('../../lib/post-processor');
-const { Exiftool, FileHash, FileSize, MultipartError, StorageTempLocal } = require('../../lib/pre-processor');
-const { JsonStream, Merge, Property } = require('../../lib/transform');
+const {
+    Merge,
+    StorageLocal,
+} = require('../../lib/post-processor');
+const {
+    Exiftool,
+    FileHash,
+    FileSize,
+    MultipartError,
+    StorageTempLocal,
+} = require('../../lib/pre-processor');
+const {
+    Pick,
+    StringifyError,
+    JsonStream,
+} = require('../../lib/transform');
 
-const { debug, debugId } = require('../../lib/debug')('streammultipart', 'SMU');
+const { debug, debugId } = require('../../lib/util/debug')('streammultipart', 'SMU');
 const { version } = require('../../package.json');
 
 debug('yellow', 'VERSION', `${version}`);
@@ -78,7 +91,7 @@ class TestServer {
             if (Array.isArray(pickPlugins)) {
                 pickPlugins.includes('multipartError') && multipart.pipe(new MultipartError()).pipe(zip);
                 pickPlugins.includes('fileSize') && multipart.pipe(new FileSize()).pipe(zip);
-                pickPlugins.includes('propertyMetadata') && multipart.pipe(new Property('metadata')).pipe(zip);
+                pickPlugins.includes('pickMetadata') && multipart.pipe(new Pick('metadata')).pipe(zip);
                 pickPlugins.includes('fileHash') && multipart.pipe(new FileHash({ encoding: 'bs58' })).pipe(zip);
                 pickPlugins.includes('storageTempLocal') && multipart.pipe(new StorageTempLocal({ tmpDir })).pipe(zip);
                 pickPlugins.includes('exiftool') && multipart.pipe(new Exiftool({ tmpDir })).pipe(zip);
@@ -88,7 +101,7 @@ class TestServer {
             } else if (Array.isArray(omitPlugins)) {
                 !omitPlugins.includes('multipartError') && multipart.pipe(new MultipartError()).pipe(zip);
                 !omitPlugins.includes('fileSize') && multipart.pipe(new FileSize()).pipe(zip);
-                !omitPlugins.includes('propertyMetadata') && multipart.pipe(new Property('metadata')).pipe(zip);
+                !omitPlugins.includes('pickMetadata') && multipart.pipe(new Pick('metadata')).pipe(zip);
                 !omitPlugins.includes('fileHash') && multipart.pipe(new FileHash({ encoding: 'bs58' })).pipe(zip);
                 !omitPlugins.includes('storageTempLocal') && multipart.pipe(new StorageTempLocal({ tmpDir })).pipe(zip);
                 !omitPlugins.includes('exiftool') && multipart.pipe(new Exiftool({ tmpDir })).pipe(zip);
@@ -98,7 +111,7 @@ class TestServer {
             } else {
                 multipart.pipe(new MultipartError()).pipe(zip);
                 multipart.pipe(new FileSize()).pipe(zip);
-                multipart.pipe(new Property('metadata')).pipe(zip);
+                multipart.pipe(new Pick('metadata')).pipe(zip);
                 multipart.pipe(new FileHash({ encoding: 'bs58' })).pipe(zip);
                 multipart.pipe(new StorageTempLocal({ tmpDir })).pipe(zip);
                 multipart.pipe(new Exiftool({ tmpDir })).pipe(zip);
@@ -109,11 +122,13 @@ class TestServer {
                 zip
                     .pipe(merge)
                     .pipe(new StorageLocal({ dir: uploadsDir }))
+                    .pipe(new StringifyError())
                     .pipe(new JsonStream())
                     .pipe(res);
             } else {
                 zip
                     .pipe(merge)
+                    .pipe(new StringifyError())
                     .pipe(new JsonStream())
                     .pipe(res);
             }
@@ -122,9 +137,9 @@ class TestServer {
 
             this.stats.requests.total++;
             this.stats.requests.unfinished++;
-            merge.on('data', (data) => {
-                debug('green', 'MERGE CHUNK', data);
-                this.stats.size += data.size;
+            merge.on('data', ({ metadata, errors }) => {
+                debug('green', 'MERGE CHUNK', { metadata, errors });
+                this.stats.size += metadata.size;
             });
             res.once('finish', () => {
                 debug('yellow', 'REQ FINISH');

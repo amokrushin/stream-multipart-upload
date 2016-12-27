@@ -11,10 +11,11 @@ const {
     MultipartError,
     // StorageTempLocal,
     Multipart,
-    Property,
+    Pick,
     Zip,
     Merge,
     // StorageLocal,
+    StringifyError,
     JsonStream,
 } = require('../..');
 
@@ -36,10 +37,13 @@ test('setup', (t) => {
         multipart.pipe(new Exiftool({ tmpDir })).pipe(zip);
         multipart.pipe(new FileSize()).pipe(zip);
         multipart.pipe(new FileHash({ encoding: 'bs58' })).pipe(zip);
-        multipart.pipe(new Property('metadata')).pipe(zip);
+        multipart.pipe(new Pick('metadata')).pipe(zip);
 
-        const result = zip.pipe(new Merge()).pipe(new JsonStream());
-        result.pipe(res);
+        zip
+            .pipe(new Merge())
+            .pipe(new StringifyError())
+            .pipe(new JsonStream())
+            .pipe(res);
     });
 
     server.once('listening', () => t.end());

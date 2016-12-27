@@ -3,7 +3,7 @@ const FormData = require('form-data');
 const fs = require('fs');
 const _ = require('lodash');
 const { Readable } = require('stream');
-const { Multipart } = require('..');
+const Multipart = require('stream-multipart');
 
 test('class', (t) => {
     t.equal(typeof Multipart, 'function');
@@ -27,7 +27,7 @@ test('normal', (t) => {
         t.ok(chunk.file instanceof Readable, `chunk[${counter}].file is a Readable stream`);
         t.equal(typeof chunk.metadata, 'object', `chunk[${counter}].metadata is an object`);
         t.equal(typeof chunk.metadata.filename, 'string', `chunk[${counter}].metadata.filename is a string`);
-        t.equal(typeof chunk.metadata.mimetype, 'string', `chunk[${counter}].metadata.mimetype is a string`);
+        t.equal(typeof chunk.metadata.contentType, 'string', `chunk[${counter}].metadata.contentType is a string`);
         chunk.file.resume();
         counter++;
     }); // 1-12

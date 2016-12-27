@@ -1,6 +1,7 @@
 {
   "extends": "airbnb",
   "rules": {
+    "class-methods-use-this": ["off"],
     "comma-dangle": [
       "error",
       {
@@ -15,10 +16,22 @@
     "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
     "import/no-unresolved": "off",
     "indent": ["error", 4, {"SwitchCase": 1}],
-    "max-len": ["error", 120],
+    "max-len": [
+      "error", {
+        "code": 120,
+        "ignoreComments": true
+      }
+    ],
+    "no-irregular-whitespace": ["error", {"skipComments": true}],
     "no-plusplus": ["off"],
     "no-underscore-dangle": ["off"],
-    "no-unused-expressions": ["error", {"allowShortCircuit": true}]
+    "no-unused-expressions": ["error", {"allowShortCircuit": true}],
+    "valid-jsdoc": [
+      "error", {
+        "preferType": {"object": "Object", "array": "Array"},
+        "requireReturn": false
+      }
+    ]
   },
   "env": {
     "node": true

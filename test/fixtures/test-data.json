@@ -5,41 +5,35 @@
     "sha1": "LtHyYfhHCUzx8FmvDvHnrMBG7as",
     "create": "2015.03.17 19:01:05",
     "modify": "2015.03.17 19:01:05",
-    "mimetype": "image/jpeg",
+    "contentType": "image/jpeg",
     "width": 1,
     "height": 1,
     "orientation": 8,
-    "camera": {
-      "model": "Canon EOS 650D",
-      "aperture": "f/3.5",
-      "exposureTime": "1/8s",
-      "focalLength": "18mm",
-      "iso": "ISO3200",
-      "datetime": "2015.03.17 19:01:05",
-      "lensModel": "EF-S18-55mm f/3.5-5.6 IS II",
-      "flashMode": 16,
-      "flashFired": false
-    }
+    "cameraModel": "Canon EOS 650D",
+    "cameraAperture": "f/3.5",
+    "cameraExposureTime": "1/8s",
+    "cameraFocalLength": "18mm",
+    "cameraISO": "ISO3200",
+    "cameraDatetime": "2015.03.17 19:01:05",
+    "cameraLensModel": "EF-S18-55mm f/3.5-5.6 IS II",
+    "cameraFlashMode": 16,
+    "cameraFlashFired": false
   },
   {
     "filename": "1px-htc-one-v.jpg",
     "size": 62314,
     "sha1": "kTSpJADZyqVBqJNvDTc5fUjn5iz",
     "create": "2012.05.20 16:15:50",
-    "mimetype": "image/jpeg",
+    "contentType": "image/jpeg",
     "width": 1,
     "height": 1,
-    "gps": {
-      "latitude": 55.7430113888889,
-      "longitude": 37.6069916666667,
-      "timestamp": 1337516150
-    },
-    "camera": {
-      "model": "HTC One V",
-      "focalLength": "3.03mm",
-      "iso": "ISO76",
-      "datetime": "2012.05.20 16:15:50"
-    }
+    "gpsLatitude": 55.7430113888889,
+    "gpsLongitude": 37.6069916666667,
+    "gpsTimestamp": 1337516150,
+    "cameraModel": "HTC One V",
+    "cameraFocalLength": "3.03mm",
+    "cameraISO": "ISO76",
+    "cameraDatetime": "2012.05.20 16:15:50"
   },
   {
     "filename": "1px-asus-zenfone-5.jpg",
@@ -47,25 +41,21 @@
     "sha1": "4VPX6DbQoDHoRUx757JSsoTUbrH5",
     "create": "2015.08.01 19:10:25",
     "modify": "2015.08.01 19:10:25",
-    "mimetype": "image/jpeg",
+    "contentType": "image/jpeg",
     "width": 1,
     "height": 1,
     "orientation": 6,
-    "gps": {
-      "latitude": 56.1235333333333,
-      "longitude": 38.6031527777778,
-      "timestamp": 1438445417
-    },
-    "camera": {
-      "model": "ASUS T00J",
-      "aperture": "f/2",
-      "exposureTime": "1/20s",
-      "focalLength": "2.69mm",
-      "iso": "ISO360",
-      "datetime": "2015.08.01 19:10:25",
-      "flashMode": 0,
-      "flashFired": false
-    }
+    "gpsLatitude": 56.1235333333333,
+    "gpsLongitude": 38.6031527777778,
+    "gpsTimestamp": 1438445417,
+    "cameraModel": "ASUS T00J",
+    "cameraAperture": "f/2",
+    "cameraExposureTime": "1/20s",
+    "cameraFocalLength": "2.69mm",
+    "cameraISO": "ISO360",
+    "cameraDatetime": "2015.08.01 19:10:25",
+    "cameraFlashMode": 0,
+    "cameraFlashFired": false
   },
   {
     "filename": "1px-canon-650d-2.jpg",
@@ -73,21 +63,19 @@
     "sha1": "2jsvTVaAdkgo2ELPaLRyHEeRxwx2",
     "create": "2014.11.30 19:58:10",
     "modify": "2014.11.30 19:58:10",
-    "mimetype": "image/jpeg",
+    "contentType": "image/jpeg",
     "width": 1,
     "height": 1,
     "orientation": 1,
-    "camera": {
-      "model": "Canon EOS 650D",
-      "aperture": "f/3.5",
-      "exposureTime": "1/60s",
-      "focalLength": "18mm",
-      "iso": "ISO1000",
-      "datetime": "2014.11.30 19:58:10",
-      "lensModel": "EF-S18-55mm f/3.5-5.6 IS II",
-      "flashMode": 9,
-      "flashFired": true
-    }
+    "cameraModel": "Canon EOS 650D",
+    "cameraAperture": "f/3.5",
+    "cameraExposureTime": "1/60s",
+    "cameraFocalLength": "18mm",
+    "cameraISO": "ISO1000",
+    "cameraDatetime": "2014.11.30 19:58:10",
+    "cameraLensModel": "EF-S18-55mm f/3.5-5.6 IS II",
+    "cameraFlashMode": 9,
+    "cameraFlashFired": true
   },
   {
     "filename": "1px-canon-ixus-75.jpg",
@@ -95,38 +83,34 @@
     "sha1": "4MSUk3cPptJwTaiNTyr51kc7fcYw",
     "create": "2011.04.23 12:31:20",
     "modify": "2011.04.23 12:31:20",
-    "mimetype": "image/jpeg",
+    "contentType": "image/jpeg",
     "width": 1,
     "height": 1,
     "orientation": 1,
-    "camera": {
-      "model": "Canon DIGITAL IXUS 75",
-      "aperture": "f/8",
-      "exposureTime": "1/160s",
-      "focalLength": "5.8mm",
-      "iso": "ISO80",
-      "datetime": "2011.04.23 12:31:20",
-      "flashMode": 24,
-      "flashFired": false
-    }
+    "cameraModel": "Canon DIGITAL IXUS 75",
+    "cameraAperture": "f/8",
+    "cameraExposureTime": "1/160s",
+    "cameraFocalLength": "5.8mm",
+    "cameraISO": "ISO80",
+    "cameraDatetime": "2011.04.23 12:31:20",
+    "cameraFlashMode": 24,
+    "cameraFlashFired": false
   },
   {
     "filename": "1px-kodak-dc210.jpg",
     "size": 22025,
     "sha1": "2QbTgHSBfixDAq17UeAwFyxm6ntz",
-    "mimetype": "image/jpeg",
+    "contentType": "image/jpeg",
     "width": 1,
     "height": 1,
     "orientation": 1,
-    "camera": {
-      "model": "Eastman Kodak Company DC210 Zoom (V05.00)",
-      "aperture": "f/4",
-      "exposureTime": "1/30s",
-      "focalLength": "4.4mm",
-      "datetime": "2000.10.26 16:46:51",
-      "flashMode": 1,
-      "flashFired": true
-    }
+    "cameraModel": "Eastman Kodak Company DC210 Zoom (V05.00)",
+    "cameraAperture": "f/4",
+    "cameraExposureTime": "1/30s",
+    "cameraFocalLength": "4.4mm",
+    "cameraDatetime": "2000.10.26 16:46:51",
+    "cameraFlashMode": 1,
+    "cameraFlashFired": true
   },
   {
     "filename": "1px-sony-d700.jpg",
@@ -134,17 +118,15 @@
     "sha1": "4T6GuEoJZM2mPdCN8pzQGMCZMKH6",
     "create": "1998.12.01 14:22:36",
     "modify": "1998.12.01 14:22:36",
-    "mimetype": "image/jpeg",
+    "contentType": "image/jpeg",
     "width": 1,
     "height": 1,
     "orientation": 1,
-    "camera": {
-      "model": "SONY DSC-D700",
-      "iso": "ISO200",
-      "datetime": "1998.12.01 14:22:36",
-      "flashMode": 0,
-      "flashFired": false
-    }
+    "cameraModel": "SONY DSC-D700",
+    "cameraISO": "ISO200",
+    "cameraDatetime": "1998.12.01 14:22:36",
+    "cameraFlashMode": 0,
+    "cameraFlashFired": false
   },
   {
     "filename": "1px-sony-dsc-p150.jpg",
@@ -152,20 +134,18 @@
     "sha1": "3N6oemRhr1XrUrSApkfYJgtjB7iy",
     "create": "2012.04.04 13:52:12",
     "modify": "2012.04.10 09:53:08",
-    "mimetype": "image/jpeg",
+    "contentType": "image/jpeg",
     "width": 1,
     "height": 1,
     "orientation": 1,
-    "camera": {
-      "model": "SONY DSC-P150",
-      "aperture": "f/2.8",
-      "exposureTime": "1/40s",
-      "focalLength": "7.9mm",
-      "iso": "ISO100",
-      "datetime": "2012.04.04 13:52:12",
-      "flashMode": 13,
-      "flashFired": true
-    }
+    "cameraModel": "SONY DSC-P150",
+    "cameraAperture": "f/2.8",
+    "cameraExposureTime": "1/40s",
+    "cameraFocalLength": "7.9mm",
+    "cameraISO": "ISO100",
+    "cameraDatetime": "2012.04.04 13:52:12",
+    "cameraFlashMode": 13,
+    "cameraFlashFired": true
   },
   {
     "filename": "1px-iphone-4.jpg",
@@ -173,29 +153,25 @@
     "sha1": "8McWTsonUP3rafiUNpJogYtn8db",
     "create": "2011.09.04 12:51:11",
     "modify": "2011.09.04 12:51:11",
-    "mimetype": "image/jpeg",
+    "contentType": "image/jpeg",
     "width": 1,
     "height": 1,
     "orientation": 1,
-    "gps": {
-      "latitude": 38.9098333333333,
-      "longitude": 1.43866666666667,
-      "timestamp": 1315134467
-    },
-    "camera": {
-      "model": "Apple iPhone 4",
-      "aperture": "f/2.8",
-      "exposureTime": "1/3016s",
-      "focalLength": "3.85mm",
-      "iso": "ISO80",
-      "datetime": "2011.09.04 12:51:11",
-      "flashMode": 0,
-      "flashFired": false
-    }
+    "gpsLatitude": 38.9098333333333,
+    "gpsLongitude": 1.43866666666667,
+    "gpsTimestamp": 1315134467,
+    "cameraModel": "Apple iPhone 4",
+    "cameraAperture": "f/2.8",
+    "cameraExposureTime": "1/3016s",
+    "cameraFocalLength": "3.85mm",
+    "cameraISO": "ISO80",
+    "cameraDatetime": "2011.09.04 12:51:11",
+    "cameraFlashMode": 0,
+    "cameraFlashFired": false
   },
   {
     "filename": "dummy-3000x2000-1.jpg",
-    "mimetype": "image/jpeg",
+    "contentType": "image/jpeg",
     "width": 3000,
     "height": 2000
   },
@@ -203,7 +179,7 @@
     "filename": "blank.pdf",
     "size": 1866,
     "sha1": "2AAiEcFSDxXRbCCJvhKyzY3Nm8K3",
-    "mimetype": "application/pdf",
+    "contentType": "application/pdf",
     "create": "2016.11.15 18:04:40",
     "modify": "2016.11.15 18:04:40"
   },
@@ -211,19 +187,19 @@
     "filename": "test.gpx",
     "size": 29650,
     "sha1": "26ibFGXVSqq6J7kNBF7iWKTziGJy",
-    "mimetype": "application/xml"
+    "contentType": "application/xml"
   },
   {
     "filename": "test.kml",
     "size": 19299,
     "sha1": "4VcMw3zKVegXA5mmi1kW3ZDQDB9B",
-    "mimetype": "application/xml"
+    "contentType": "application/xml"
   },
   {
     "filename": "test.svg",
     "size": 3445,
     "sha1": "2me4tVtt3d4STqs813BhKwk4Bp8e",
-    "mimetype": "image/svg+xml",
+    "contentType": "image/svg+xml",
     "width": 744.09448819,
     "height": 1052.3622047
   },
@@ -231,11 +207,11 @@
     "filename": "empty.txt",
     "size": 0,
     "sha1": "43LNwPunkRCSovrjPyoxpukWVtnU",
-    "mimetype": "text/plain"
+    "contentType": "text/plain"
   },
   {
     "filename": "jpeg-format-error.jpg",
-    "mimetype": "image/jpeg",
+    "contentType": "image/jpeg",
     "size": 65536,
     "sha1": "2wS4yY3RzB1fernF1mXpM1RfZQWb",
     "warning": "JPEG format error"
@@ -245,14 +221,12 @@
     "size": 328762,
     "sha1": "3Qji67U4Dx9HXkrgngp4dviEvVse",
     "create": "2010.06.06 13:07:51",
-    "mimetype": "image/jpeg",
+    "contentType": "image/jpeg",
     "width": 8,
     "height": 8,
-    "camera": {
-      "datetime": "2010.06.06 13:07:51",
-      "iso": "ISO100",
-      "model": "HTC Desire"
-    }
+    "cameraDatetime": "2010.06.06 13:07:51",
+    "cameraISO": "ISO100",
+    "cameraModel": "HTC Desire"
   },
   {
     "filename": "8px-motorola-moto-g.jpg",
@@ -260,17 +234,15 @@
     "sha1": "2VPajsTX3HmB33xqFAzEbDqwcj2B",
     "create": "2016.07.31 15:06:55",
     "modify": "2016.07.31 15:06:55",
-    "mimetype": "image/jpeg",
-    "camera": {
-      "aperture": "f/2",
-      "datetime": "2016.07.31 15:06:55",
-      "exposureTime": "1/450s",
-      "flashFired": false,
-      "flashMode": 24,
-      "focalLength": "4.68mm",
-      "iso": "ISO64",
-      "model": "Motorola Moto G (4)"
-    },
+    "contentType": "image/jpeg",
+    "cameraAperture": "f/2",
+    "cameraDatetime": "2016.07.31 15:06:55",
+    "cameraExposureTime": "1/450s",
+    "cameraFlashFired": false,
+    "cameraFlashMode": 24,
+    "cameraFocalLength": "4.68mm",
+    "cameraISO": "ISO64",
+    "cameraModel": "Motorola Moto G (4)",
     "warning": "JPEG format error"
   },
   {
@@ -278,20 +250,16 @@
     "size": 339836,
     "sha1": "22oG78UB5bwFuTi3NgtLd3QkT1LU",
     "create": "2011.08.11 19:16:17",
-    "mimetype": "image/jpeg",
+    "contentType": "image/jpeg",
     "width": 8,
     "height": 8,
-    "camera": {
-      "datetime": "2011.08.11 19:16:17",
-      "focalLength": "3.53mm",
-      "iso": "ISO95",
-      "model": "HTC myTouch 4G"
-    },
-    "gps": {
-      "latitude": 36.0604638888889,
-      "longitude": 112.107,
-      "timestamp": 1313115377
-    }
+    "cameraDatetime": "2011.08.11 19:16:17",
+    "cameraFocalLength": "3.53mm",
+    "cameraISO": "ISO95",
+    "cameraModel": "HTC myTouch 4G",
+    "gpsLatitude": 36.0604638888889,
+    "gpsLongitude": 112.107,
+    "gpsTimestamp": 1313115377
   },
   {
     "filename": "withIptcExifGps.jpg",
@@ -299,20 +267,16 @@
     "sha1": "42GT1NsqAggW2mzxTCRbKyzkMDwn",
     "create": "2002.07.13 15:58:28",
     "modify": "2002.07.19 13:28:10",
-    "mimetype": "image/jpeg",
+    "contentType": "image/jpeg",
     "width": 600,
     "height": 400,
     "orientation": 1,
-    "camera": {
-      "aperture": "f/0.64",
-      "datetime": "2002.07.13 15:58:28",
-      "flashFired": false,
-      "flashMode": 0,
-      "model": "FUJIFILM FinePixS1Pro"
-    },
-    "gps": {
-      "latitude": 54.9896666666667,
-      "longitude": 1.91416666666667
-    }
+    "cameraAperture": "f/0.64",
+    "cameraDatetime": "2002.07.13 15:58:28",
+    "cameraFlashFired": false,
+    "cameraFlashMode": 0,
+    "cameraModel": "FUJIFILM FinePixS1Pro",
+    "gpsLatitude": 54.9896666666667,
+    "gpsLongitude": 1.91416666666667
   }
 ]

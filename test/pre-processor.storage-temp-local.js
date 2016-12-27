@@ -3,7 +3,7 @@ const fs = require('fs-extra');
 const path = require('path');
 const async = require('async');
 const os = require('os');
-const { StorageTempLocal } = require('..');
+const StorageTempLocal = require('../lib/pre-processor/StorageTempLocal');
 const uuid = require('uuid');
 
 const reUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/;
@@ -34,9 +34,9 @@ test('os.tmpdir', (t) => {
     });
 
     stream
-        .on('data', (chunk) => {
-            t.equal(path.dirname(chunk.localTmpFilepath), os.tmpdir(), 'path match os.tmpdir()');
-            tmpFiles.push(chunk.localTmpFilepath);
+        .on('data', ({ metadata }) => {
+            t.equal(path.dirname(metadata.localTmpFilepath), os.tmpdir(), 'path match os.tmpdir()');
+            tmpFiles.push(metadata.localTmpFilepath);
         })
         .on('end', t.end)
         .end();
@@ -52,9 +52,9 @@ test('options.tmpDir', (t) => {
     });
 
     stream
-        .on('data', (chunk) => {
-            t.equal(path.dirname(chunk.localTmpFilepath), TMP_DIR, 'path match TMP_DIR');
-            tmpFiles.push(chunk.localTmpFilepath);
+        .on('data', ({ metadata }) => {
+            t.equal(path.dirname(metadata.localTmpFilepath), TMP_DIR, 'path match TMP_DIR');
+            tmpFiles.push(metadata.localTmpFilepath);
         })
         .on('end', t.end)
         .end();
@@ -68,11 +68,11 @@ test('stream', (t) => {
     testData.forEach(obj => stream.write(obj));
 
     stream
-        .on('data', (chunk) => {
-            t.ok(chunk.localTmpFilepath, `chunk #${counter} localTmpFilepath set`);
-            t.equal(path.dirname(chunk.localTmpFilepath), os.tmpdir(), `chunk #${counter} temp path match`);
-            t.ok(reUuid.test(path.basename(chunk.localTmpFilepath)), `chunk #${counter} temp filename match uuid`);
-            tmpFiles.push(chunk.localTmpFilepath);
+        .on('data', ({ metadata }) => {
+            t.ok(metadata.localTmpFilepath, `chunk #${counter} localTmpFilepath set`);
+            t.equal(path.dirname(metadata.localTmpFilepath), os.tmpdir(), `chunk #${counter} temp path match`);
+            t.ok(reUuid.test(path.basename(metadata.localTmpFilepath)), `chunk #${counter} temp filename match uuid`);
+            tmpFiles.push(metadata.localTmpFilepath);
             counter++;
         })
         .on('end', t.end)
@@ -80,13 +80,15 @@ test('stream', (t) => {
 });
 
 test('invalid chunk format', (t) => {
-    t.plan(1);
+    t.plan(3);
     const stream = new StorageTempLocal();
-    stream.once('error', (err) => {
-        t.ok(/Invalid chunk format: file is not readable stream/.test(err.message), 'invalid chunk error');
-        t.end();
-    });
-    stream.end({});
+    stream
+        .on('data', ({ errors }) => {
+            t.equal(errors.length, 1, 'single error'); // 1
+            t.equal(errors[0].name, 'InvalidChunk', 'chunk error is `InvalidChunk`'); // 2
+        })
+        .once('end', () => t.pass('stream end')) // 3
+        .end({});
 });
 
 test('teardown', (t) => {

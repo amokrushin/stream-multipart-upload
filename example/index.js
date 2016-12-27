@@ -2,25 +2,34 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 const FormData = require('form-data');
+const aws = require('aws-sdk');
 const {
-    Exiftool,
-    FileHash,
-    FileSize,
-    MultipartError,
-    StorageTempLocal,
     Multipart,
-    Property,
+    MultipartError,
+    Pick,
+    FileSize,
+    FileHash,
+    StorageTempLocal,
+    StorageTempS3,
+    Exiftool,
     Zip,
     Merge,
     StorageLocal,
+    StorageS3,
+    StringifyError,
     JsonStream,
 } = require('..');
 // replace with require('stream-multipart-upload')
 
+aws.config.credentials = new aws.SharedIniFileCredentials({ profile: 'test-stream-multipart-upload' });
+
 const server = http.createServer((req, res) => {
     const multipart = req.pipe(new Multipart({ headers: req.headers }));
     const zip = new Zip();
-    const uploadsDir = '/var/www/uploads';
+    const FS_UPLOADS_DIR = '/var/www/uploads';
+    const S3_BUCKET = 'test-stream-multipart-upload';
+    const S3_UPLOADS_PATH = 'uploads';
+    const S3_TEMP_PATH = 'temp';
 
     multipart.once('data', () => {
         res.writeHead(200, { 'Content-Type': 'application/json' });
@@ -34,15 +43,18 @@ const server = http.createServer((req, res) => {
     });
 
     multipart.pipe(new MultipartError()).pipe(zip);
-    multipart.pipe(new Property('metadata')).pipe(zip);
+    multipart.pipe(new Pick('metadata')).pipe(zip);
     multipart.pipe(new FileSize()).pipe(zip);
     multipart.pipe(new FileHash({ encoding: 'bs58' })).pipe(zip);
     multipart.pipe(new StorageTempLocal()).pipe(zip);
+    multipart.pipe(new StorageTempS3({ bucket: S3_BUCKET, path: S3_TEMP_PATH })).pipe(zip);
     multipart.pipe(new Exiftool()).pipe(zip);
 
     zip
         .pipe(new Merge())
-        .pipe(new StorageLocal({ dir: uploadsDir }))
+        .pipe(new StorageLocal({ dir: FS_UPLOADS_DIR }))
+        .pipe(new StorageS3({ bucket: S3_BUCKET, path: S3_UPLOADS_PATH, saveMetadata: true, skipDeleteTemp: true }))
+        .pipe(new StringifyError())
         .pipe(new JsonStream())
         .pipe(res);
 });
@@ -58,6 +70,7 @@ server.once('listening', () => {
             response += data.toString();
         });
         res.on('end', () => {
+            // eslint-disable-next-line no-console
             console.log(JSON.parse(response));
             server.close();
         });
@@ -75,53 +88,61 @@ Example output:
 
 [
     {
-        fieldname: 'file',
-        filename: 'img_1771.jpg',
-        encoding: 'binary',
-        mimetype: 'image/jpeg',
-        charset: 'binary',
-        size: 32764,
-        sha1: '2nzCcEDVvAHT9PBgeVMu2UJJgeGF',
-        create: '2003.12.14 12:01:44',
-        modify: '2003.12.14 12:01:44',
-        width: 480,
-        height: 360,
-        orientation: 1,
-        camera: {
-            model: 'Canon PowerShot S40',
-            aperture: 'f/4.9',
-            exposureTime: '1/500s',
-            focalLength: '21.3125mm',
-            datetime: '2003.12.14 12:01:44',
-            flashMode: 24,
-            flashFired: false
-        },
-        storageLocalFilename: '83049480-c3f8-11e6-8db4-ebf3271e57e7.jpg',
-        storageLocalFilepath: '/var/www/uploads/83049480-c3f8-11e6-8db4-ebf3271e57e7.jpg'
+        metadata: {
+            fieldname: 'file',
+            encoding: 'binary',
+            contentType: 'image/jpeg',
+            filename: 'img_1771.jpg',
+            size: 32764,
+            sha1: '2nzCcEDVvAHT9PBgeVMu2UJJgeGF',
+            create: '2003.12.14 12:01:44',
+            modify: '2003.12.14 12:01:44',
+            width: 480,
+            height: 360,
+            orientation: 1,
+            cameraModel: 'Canon PowerShot S40',
+            cameraAperture: 'f/4.9',
+            cameraExposureTime: '1/500s',
+            cameraFocalLength: '21.3125mm',
+            cameraDatetime: '2003.12.14 12:01:44',
+            cameraFlashMode: 24,
+            cameraFlashFired: false,
+            s3TempBucket: 'test-stream-multipart-upload',
+            s3TempKey: 'd70392b0-cbba-11e6-8a9c-1dfcd06b3d4a',
+            storageLocalFilename: 'd778e9c0-cbba-11e6-8a9c-1dfcd06b3d4a.jpg',
+            storageLocalFilepath: '/var/www/uploads/d778e9c0-cbba-11e6-8a9c-1dfcd06b3d4a.jpg',
+            s3Bucket: 'test-stream-multipart-upload',
+            s3Key: 'uploads/d7803cc0-cbba-11e6-8a9c-1dfcd06b3d4a.jpg'
+        }
     },
     {
-        fieldname: 'file',
-        filename: 'withIptcExifGps.jpg',
-        encoding: 'binary',
-        mimetype: 'image/jpeg',
-        charset: 'binary',
-        size: 44606,
-        sha1: '42GT1NsqAggW2mzxTCRbKyzkMDwn',
-        create: '2002.07.13 15:58:28',
-        modify: '2002.07.19 13:28:10',
-        width: 600,
-        height: 400,
-        orientation: 1,
-        gps: { latitude: 54.9896666666667, longitude: 1.91416666666667 },
-        camera: {
-            model: 'FUJIFILM FinePixS1Pro',
-            aperture: 'f/0.64',
-            datetime: '2002.07.13 15:58:28',
-            flashMode: 0,
-            flashFired: false
-        },
-        storageLocalFilename: '830b7250-c3f8-11e6-8db4-ebf3271e57e7.jpg',
-        storageLocalFilepath: '/var/www/uploads/830b7250-c3f8-11e6-8db4-ebf3271e57e7.jpg'
+        metadata: {
+            fieldname: 'file',
+            encoding: 'binary',
+            contentType: 'image/jpeg',
+            filename: 'withIptcExifGps.jpg',
+            size: 44606,
+            sha1: '42GT1NsqAggW2mzxTCRbKyzkMDwn',
+            create: '2002.07.13 15:58:28',
+            modify: '2002.07.19 13:28:10',
+            width: 600,
+            height: 400,
+            orientation: 1,
+            gpsLatitude: 54.9896666666667,
+            gpsLongitude: 1.91416666666667,
+            cameraModel: 'FUJIFILM FinePixS1Pro',
+            cameraAperture: 'f/0.64',
+            cameraDatetime: '2002.07.13 15:58:28',
+            cameraFlashMode: 0,
+            cameraFlashFired: false,
+            s3TempBucket: 'test-stream-multipart-upload',
+            s3TempKey: 'd779fb30-cbba-11e6-8a9c-1dfcd06b3d4a',
+            storageLocalFilename: 'd7e39270-cbba-11e6-8a9c-1dfcd06b3d4a.jpg',
+            storageLocalFilepath: '/var/www/uploads/d7e39270-cbba-11e6-8a9c-1dfcd06b3d4a.jpg',
+            s3Bucket: 'test-stream-multipart-upload',
+            s3Key: 'uploads/d7e3e090-cbba-11e6-8a9c-1dfcd06b3d4a.jpg'
+        }
     }
 ]
+
 */
