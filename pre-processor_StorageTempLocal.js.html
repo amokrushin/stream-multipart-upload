@@ -43,7 +43,7 @@ const uuid = require('uuid');
 const fs = require('fs-extra');
 const path = require('path');
 const os = require('os');
-const { CustomError, MissingRequiredParameter, InvalidChunk } = require('../errors');
+const { InvalidChunk } = require('../errors');
 
 class StorageTempLocal extends Transform {
     /**
