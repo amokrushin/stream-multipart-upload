@@ -50,7 +50,7 @@ const server = http.createServer((req, res) => {
     zip
         .pipe(new Merge())
         .pipe(new StorageLocal({ dir: FS_UPLOADS_DIR }))
-        .pipe(new StorageS3({ bucket: S3_BUCKET, path: S3_UPLOADS_PATH, saveMetadata: true, skipDeleteTemp: true }))
+        .pipe(new StorageS3({ bucket: S3_BUCKET, path: S3_UPLOADS_PATH, saveMetadata: true }))
         .pipe(new StringifyError())
         .pipe(new JsonStream())
         .pipe(res);
