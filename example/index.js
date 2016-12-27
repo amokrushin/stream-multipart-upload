@@ -53,7 +53,7 @@ const server = http.createServer((req, res) => {
     zip
         .pipe(new Merge())
         .pipe(new StorageLocal({ dir: FS_UPLOADS_DIR }))
-        .pipe(new StorageS3({ bucket: S3_BUCKET, path: S3_UPLOADS_PATH, saveMetadata: true, skipDeleteTemp: true }))
+        .pipe(new StorageS3({ bucket: S3_BUCKET, path: S3_UPLOADS_PATH, saveMetadata: true }))
         .pipe(new StringifyError())
         .pipe(new JsonStream())
         .pipe(res);
@@ -107,8 +107,6 @@ Example output:
             cameraDatetime: '2003.12.14 12:01:44',
             cameraFlashMode: 24,
             cameraFlashFired: false,
-            s3TempBucket: 'test-stream-multipart-upload',
-            s3TempKey: 'd70392b0-cbba-11e6-8a9c-1dfcd06b3d4a',
             storageLocalFilename: 'd778e9c0-cbba-11e6-8a9c-1dfcd06b3d4a.jpg',
             storageLocalFilepath: '/var/www/uploads/d778e9c0-cbba-11e6-8a9c-1dfcd06b3d4a.jpg',
             s3Bucket: 'test-stream-multipart-upload',
@@ -135,8 +133,6 @@ Example output:
             cameraDatetime: '2002.07.13 15:58:28',
             cameraFlashMode: 0,
             cameraFlashFired: false,
-            s3TempBucket: 'test-stream-multipart-upload',
-            s3TempKey: 'd779fb30-cbba-11e6-8a9c-1dfcd06b3d4a',
             storageLocalFilename: 'd7e39270-cbba-11e6-8a9c-1dfcd06b3d4a.jpg',
             storageLocalFilepath: '/var/www/uploads/d7e39270-cbba-11e6-8a9c-1dfcd06b3d4a.jpg',
             s3Bucket: 'test-stream-multipart-upload',
