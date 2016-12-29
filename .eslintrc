@@ -29,7 +29,9 @@
     "valid-jsdoc": [
       "error", {
         "preferType": {"object": "Object", "array": "Array"},
-        "requireReturn": false
+        "requireReturn": false,
+        "requireParamDescription": false,
+        "requireReturnDescription": false
       }
     ]
   },
