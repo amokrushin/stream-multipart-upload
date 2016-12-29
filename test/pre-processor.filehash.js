@@ -34,3 +34,17 @@ test('invalid chunk format', (t) => {
         .once('end', () => t.pass('stream end')) // 3
         .end({});
 });
+
+test('algorithmNameAsKey option', (t) => {
+    const stream = new FileHash({ algorithmNameAsKey: false });
+    stream.end({
+        file: fs.createReadStream(`${__dirname}/samples/1px-canon-650d.jpg`),
+        metadata: { filename: '1px-canon-650d.jpg', contentType: 'image/jpeg' },
+    });
+    stream.on('data', ({ metadata }) => {
+        t.deepEqual(metadata, {
+            hash: '189bb3ac57b640235ace1b8f1a1a76a2db7b46bc',
+        }, 'chunk match');
+    });
+    stream.on('end', t.end);
+});
