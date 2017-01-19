@@ -2,6 +2,7 @@
 const test = require('tape');
 const path = require('path');
 const fs = require('fs-extra');
+const klaw = require('klaw');
 const { request, Agent } = require('http');
 const async = require('async');
 const _ = require('lodash');
@@ -41,7 +42,7 @@ test('setup', (t) => {
 });
 
 test('collect samples', (t) => {
-    fs.walk(SAMPLES_DIR)
+    klaw(SAMPLES_DIR)
         .on('data', (item) => {
             if (item.stats.isDirectory()) return;
             samples.push(item.path);
@@ -100,7 +101,7 @@ test('upload files', (t) => {
 test('test uploaded files', (t) => {
     let uploadsSize = 0;
     let counter = 0;
-    fs.walk(UPLOADS_DIR)
+    klaw(UPLOADS_DIR)
         .on('data', (item) => {
             if (item.stats.isDirectory()) return;
             uploadsSize += fs.statSync(item.path).size;
