@@ -50,14 +50,19 @@ class FileHash extends Transform {
      *      FileHash options.
      * @param {string} [options.algorithm='sha1']
      *      Hash function algorithm.
-     * @param {'hex'|'bs58'} [options.encoding='hex']
+     * @param {'hex'|'latin1'|'base64'|'bs58'} [options.encoding='hex']
      *      Hash output encoding.
+     * @param {string} [options.algorithmNameAsKey=true]
+     *      Output metadata object key is `[algorithm]`, otherwise `hash`.
      * @extends Transform
      */
     constructor(options) {
         super({ objectMode: true, highWaterMark: 1 });
-        this.algorithm = (options &amp;&amp; options.algorithm) || 'sha1';
-        this.encoding = (options &amp;&amp; options.encoding) || 'hex'; // hex, bs58
+        this.options = Object.assign({
+            algorithm: 'sha1',
+            encoding: 'hex',
+            algorithmNameAsKey: true,
+        }, options);
     }
 
     _transform(chunk, encoding, callback) {
@@ -68,15 +73,17 @@ class FileHash extends Transform {
         }
 
         const stream = crypto
-            .createHash(this.algorithm)
+            .createHash(this.options.algorithm)
             .setEncoding('hex')
             .once('finish', () => {
-                const hash = this.encoding === 'bs58'
+                const hash = this.options.encoding === 'bs58'
                     ? bs58.encode(new Buffer(stream.read(), 'hex'))
                     : stream.read();
-                callback(null, {
-                    metadata: { [this.algorithm]: hash },
-                });
+                if (this.options.algorithmNameAsKey) {
+                    callback(null, { metadata: { [this.options.algorithm]: hash } });
+                } else {
+                    callback(null, { metadata: { hash } });
+                }
             });
 
         chunk.file.pipe(stream);
