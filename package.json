@@ -19,8 +19,8 @@
     "url": "git+https://github.com/amokrushin/stream-multipart-upload.git"
   },
   "scripts": {
-    "test": "node test",
-    "codecov": "node test -c lcovonly && ./node_modules/.bin/codecov",
+    "test": "iamtest",
+    "codecov": "iamtest -c lcovonly && ./node_modules/.bin/codecov",
     "git-reset": "git reset --hard HEAD && git clean -df && git pull",
     "download-exiftool-sample-images": "mkdir -p test/sample-images && exiftool-sample-images test/samples/exiftool",
     "build-docs": "node_modules/.bin/jsdoc -c jsdoc.json",
@@ -40,7 +40,6 @@
     "uuid": "^3.0.1"
   },
   "devDependencies": {
-    "am-node-tape-runner": "^1.2.0",
     "async": "^2.1.5",
     "chalk": "^1.1.3",
     "cli-table": "^0.3.1",
@@ -48,6 +47,7 @@
     "docdash": "^0.4.0",
     "form-data": "^2.1.2",
     "gh-pages": "^0.12.0",
+    "iamtest": "^1.5.1",
     "klaw": "^1.3.1",
     "oboe": "^2.1.2",
     "tape": "^4.6.3"
