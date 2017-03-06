@@ -95,8 +95,8 @@ Example output:
             filename: 'img_1771.jpg',
             size: 32764,
             sha1: '2nzCcEDVvAHT9PBgeVMu2UJJgeGF',
-            create: '2003.12.14 12:01:44',
-            modify: '2003.12.14 12:01:44',
+            create: '2003-12-14T12:01:44',
+            modify: '2003-12-14T12:01:44',
             width: 480,
             height: 360,
             orientation: 1,
@@ -104,14 +104,14 @@ Example output:
             cameraAperture: 'f/4.9',
             cameraExposureTime: '1/500s',
             cameraFocalLength: '21.3125mm',
-            cameraDatetime: '2003.12.14 12:01:44',
+            cameraDatetime: '2003-12-14T12:01:44',
             cameraFlashMode: 24,
             cameraFlashFired: false,
-            storageLocalFilename: 'd778e9c0-cbba-11e6-8a9c-1dfcd06b3d4a.jpg',
-            storageLocalFilepath: '/var/www/uploads/d778e9c0-cbba-11e6-8a9c-1dfcd06b3d4a.jpg',
+            storageLocalFilename: '040d8ff0-0201-11e7-b6a1-addee42ecf08.jpg',
+            storageLocalFilepath: '/var/www/uploads/040d8ff0-0201-11e7-b6a1-addee42ecf08.jpg',
             s3Bucket: 'test-stream-multipart-upload',
-            s3Key: 'uploads/d7803cc0-cbba-11e6-8a9c-1dfcd06b3d4a.jpg'
-        }
+            s3Key: 'uploads/0410eb50-0201-11e7-b6a1-addee42ecf08.jpg',
+        },
     },
     {
         metadata: {
@@ -121,8 +121,8 @@ Example output:
             filename: 'withIptcExifGps.jpg',
             size: 44606,
             sha1: '42GT1NsqAggW2mzxTCRbKyzkMDwn',
-            create: '2002.07.13 15:58:28',
-            modify: '2002.07.19 13:28:10',
+            create: '2002-07-13T15:58:28',
+            modify: '2002-07-19T13:28:10',
             width: 600,
             height: 400,
             orientation: 1,
@@ -130,15 +130,15 @@ Example output:
             gpsLongitude: 1.91416666666667,
             cameraModel: 'FUJIFILM FinePixS1Pro',
             cameraAperture: 'f/0.64',
-            cameraDatetime: '2002.07.13 15:58:28',
+            cameraDatetime: '2002-07-13T15:58:28',
             cameraFlashMode: 0,
             cameraFlashFired: false,
-            storageLocalFilename: 'd7e39270-cbba-11e6-8a9c-1dfcd06b3d4a.jpg',
-            storageLocalFilepath: '/var/www/uploads/d7e39270-cbba-11e6-8a9c-1dfcd06b3d4a.jpg',
+            storageLocalFilename: '044f05c0-0201-11e7-b6a1-addee42ecf08.jpg',
+            storageLocalFilepath: '/var/www/uploads/044f05c0-0201-11e7-b6a1-addee42ecf08.jpg',
             s3Bucket: 'test-stream-multipart-upload',
-            s3Key: 'uploads/d7e3e090-cbba-11e6-8a9c-1dfcd06b3d4a.jpg'
-        }
-    }
+            s3Key: 'uploads/04676fc0-0201-11e7-b6a1-addee42ecf08.jpg',
+        },
+    },
 ]
 
 */
