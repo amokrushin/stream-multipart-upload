@@ -13,6 +13,10 @@
   },
   "license": "MIT",
   "author": "Anton Mokrushin <anton@mokr.org>",
+  "files": [
+    "lib",
+    "index.js"
+  ],
   "main": "index.js",
   "repository": {
     "type": "git",
