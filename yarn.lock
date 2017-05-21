@@ -1048,6 +1048,10 @@ esutils@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/esutils/-/esutils-2.0.2.tgz#0abf4f1caa5bcb1f7a9d8acc6dea4faaa04bac9b"
 
+exiftool-vendored.pl@^10.51.0:
+  version "10.51.0"
+  resolved "https://registry.yarnpkg.com/exiftool-vendored.pl/-/exiftool-vendored.pl-10.51.0.tgz#967db16aa08d0822a48a500b60f8300cf216b931"
+
 exiftool-vendored@^3.1.1:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/exiftool-vendored/-/exiftool-vendored-3.1.1.tgz#1d9de392a649056ff75d1401fcb140df4a107748"
