@@ -4,7 +4,9 @@ cache: yarn
 node_js:
 - 6
 - stable
-after_success: npm run codecov
+after_success:
+  - yarn add codecov
+  - "./node_modules/.bin/iamtest -c lcovonly && ./node_modules/.bin/codecov"
 env:
   global:
   - secure: Zdkp6WqoUzfjPKIX/voWK1uRY/d7GML9t8RSS1ACI6kbgnO2oSaLQVgsn0DmCRfaTJoMLbyhytj7luLVxBaB99YCbs7567Fizq6gRAoqiUs4320P05++bO/oSP8PENB4sjQqC4N7+aq49sc15Hu40GTORJl4EvlzQoVd6Oc53B6ZYNGVnoNllKhSecTTVwQPR1E57RNmuMUhJNQkpGb9QFLtqdZNXhXiLhjbtynf/7whecKwOMgOFDEtV5+MU4s/x/7x10rm5e8BEl3fKuCG87/7X6fxICBO5Edsfm4HJlWlG7NXXolYuN0LYhLCu8f8OqnWpkdUyxCAU/1xucvfTtsPMLO6dQ/yHQt1H+WzW5L5zukQ/96g5W9sxZqCHD6E/cy+IhYIiAUm6UJprr5zp6OxgYV8IOmr4RpGYLN7KT4aYlfFEkdU26UQzEf9T7mNwZufoGNgE6PXzUwMpZ8Y9jK/BNEYyMtAgrAGij6m6H4R74DyLF1yYkRzGEeObh2EonepS9UDtmlnF+XHQUGSrfy0cFTeDdQ+RCn6OyMtzkanJI5vyWlRFZKmcuCxiUZZxmQhnf7awgHX3bjGcER1oo54bP+BHZ9A/Ir2ncTLV7lNB40kG5icudhjBRB94yRV5Svf+B8vcwr/Twz8gKueeX7YxA09vPK/wquxpqyOB6E=
