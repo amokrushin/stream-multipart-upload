@@ -23,7 +23,7 @@
     "url": "git+https://github.com/amokrushin/stream-multipart-upload.git"
   },
   "scripts": {
-    "test": "iamtest",
+    "test": "iamtest -r spec",
     "codecov": "iamtest -c lcovonly && ./node_modules/.bin/codecov",
     "git-reset": "git reset --hard HEAD && git clean -df && git pull",
     "download-exiftool-sample-images": "mkdir -p test/sample-images && exiftool-sample-images test/samples/exiftool",
