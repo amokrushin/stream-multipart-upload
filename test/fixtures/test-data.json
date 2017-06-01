@@ -29,7 +29,7 @@
     "height": 1,
     "gpsLatitude": 55.7430113888889,
     "gpsLongitude": 37.6069916666667,
-    "gpsTimestamp": 1337505350,
+    "gpsTimestamp": 1337516150,
     "cameraModel": "HTC One V",
     "cameraFocalLength": "3.03mm",
     "cameraISO": "ISO76",
@@ -47,7 +47,7 @@
     "orientation": 6,
     "gpsLatitude": 56.1235333333333,
     "gpsLongitude": 38.6031527777778,
-    "gpsTimestamp": 1438434617,
+    "gpsTimestamp": 1438445417,
     "cameraModel": "ASUS T00J",
     "cameraAperture": "f/2",
     "cameraExposureTime": "1/20s",
@@ -159,7 +159,7 @@
     "orientation": 1,
     "gpsLatitude": 38.9098333333333,
     "gpsLongitude": 1.43866666666667,
-    "gpsTimestamp": 1315123667,
+    "gpsTimestamp": 1315134467,
     "cameraModel": "Apple iPhone 4",
     "cameraAperture": "f/2.8",
     "cameraExposureTime": "1/3016s",
@@ -259,7 +259,7 @@
     "cameraModel": "HTC myTouch 4G",
     "gpsLatitude": 36.0604638888889,
     "gpsLongitude": 112.107,
-    "gpsTimestamp": 1313104577
+    "gpsTimestamp": 1313115377
   },
   {
     "filename": "withIptcExifGps.jpg",
