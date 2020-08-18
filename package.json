@@ -39,7 +39,7 @@
     "exiftool-vendored": "^4.17.0",
     "frac": "^1.1.2",
     "fs-extra": "^5.0.0",
-    "lodash": "^4.17.5",
+    "lodash": "^4.17.20",
     "stream-multipart": "^0.3.1",
     "stream-zip": "^1.0.6",
     "uuid": "^3.2.1"
