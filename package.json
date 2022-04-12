@@ -33,7 +33,7 @@
     "preversion": "npm run publish-docs"
   },
   "dependencies": {
-    "async": "^2.6.0",
+    "async": "^3.2.2",
     "aws-sdk": "^2.202.0",
     "bs58": "^4.0.1",
     "exiftool-vendored": "^4.17.0",
