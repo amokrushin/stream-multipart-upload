@@ -1,0 +1,10 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.25.1
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  'npm:hoek:20180212':
+    - stream-multipart > codecov > request > hawk > cryptiles > boom > hoek:
+        patched: '2024-09-17T21:22:44.039Z'
+        id: 'npm:hoek:20180212'
+        path: stream-multipart > codecov > request > hawk > cryptiles > boom > hoek
